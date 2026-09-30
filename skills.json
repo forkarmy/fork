@@ -278,5 +278,15 @@
     "repo": "mathiasbynens/punycode.js",
     "license": "MIT",
     "sourceCommit": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
+  },
+  {
+    "slug": "duration-parser",
+    "title": "Duration Parser",
+    "version": 29,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "vercel/ms",
+    "license": "MIT",
+    "sourceCommit": "4ff48cec099f0514c3e9bbca18706c9c21122bfb"
   }
 ]

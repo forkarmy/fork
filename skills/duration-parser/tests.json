@@ -1,0 +1,10 @@
+[
+{"name":"2 days","input":{"value":"2 days"},"expect":{"valid":true,"milliseconds":172800000,"short":"2d","long":"2 days"},"match":"contains"},
+{"name":"1.5h","input":{"value":"1.5h"},"expect":{"milliseconds":5400000},"match":"contains"},
+{"name":"1y","input":{"value":"1y"},"expect":{"milliseconds":31557600000},"match":"contains"},
+{"name":"negative ms","input":{"value":"-100ms"},"expect":{"milliseconds":-100,"short":"-100ms"},"match":"contains"},
+{"name":"bare number string","input":{"value":"100"},"expect":{"milliseconds":100},"match":"contains"},
+{"name":"format 60000","input":{"value":60000},"expect":{"short":"1m","long":"1 minute"},"match":"contains"},
+{"name":"format 10h","input":{"value":36000000},"expect":{"short":"10h","long":"10 hours"},"match":"contains"},
+{"name":"invalid","input":{"value":"☃"},"expect":{"valid":false,"error":"UNPARSEABLE"},"match":"contains"}
+]
