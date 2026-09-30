@@ -1,0 +1,20 @@
+{
+  "slug": "isbn-validate",
+  "title": "ISBN Validator",
+  "description": "Validates an ISBN-10 or ISBN-13 string (hyphens and spaces ignored, check digit X allowed) using the checksum rules from limeburst/isbn-rs, and converts between the two forms when the ISBN-13 GS1 prefix is 978. ISBN-13 values must start with 978 or 979. Returns validity, detected format, canonical hyphen-free forms, and an error code with message when invalid.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "isbn": {
+        "type": "string",
+        "description": "ISBN-10 or ISBN-13, with optional hyphens or spaces. The ISBN-10 check digit may be X or x."
+      }
+    },
+    "required": ["isbn"],
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "limeburst/isbn-rs",
+    "files": ["src/lib.rs"]
+  }
+}

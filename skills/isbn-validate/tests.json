@@ -1,0 +1,109 @@
+[
+  {
+    "name": "wikipedia isbn-10",
+    "input": {"isbn": "0-306-40615-2"},
+    "expect": {
+      "valid": true,
+      "format": "isbn10",
+      "isbn10": "0306406152",
+      "isbn13": "9780306406157",
+      "check_digit": "2"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "wikipedia isbn-13",
+    "input": {"isbn": "978-3-16-148410-0"},
+    "expect": {
+      "valid": true,
+      "format": "isbn13",
+      "isbn10": "316148410X",
+      "isbn13": "9783161484100",
+      "check_digit": "0"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "isbn-10 check digit X lowercase",
+    "input": {"isbn": "0-9752298-0-x"},
+    "expect": {
+      "valid": true,
+      "format": "isbn10",
+      "isbn10": "097522980X",
+      "check_digit": "X"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "isbn-10 X uppercase",
+    "input": {"isbn": "0-8044-2957-X"},
+    "expect": {
+      "valid": true,
+      "format": "isbn10",
+      "isbn10": "080442957X",
+      "isbn13": "9780804429573",
+      "check_digit": "X"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "spaces instead of hyphens",
+    "input": {"isbn": "978 0 306 40615 7"},
+    "expect": {
+      "valid": true,
+      "format": "isbn13",
+      "isbn10": "0306406152",
+      "isbn13": "9780306406157",
+      "check_digit": "7"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "979 cannot convert to isbn-10",
+    "input": {"isbn": "9790000000001"},
+    "expect": {
+      "valid": true,
+      "format": "isbn13",
+      "isbn10": null,
+      "isbn13": "9790000000001",
+      "check_digit": "1"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "library invalid isbn-10 checksum",
+    "input": {"isbn": "99999-999-9-X"},
+    "expect": {"valid": false, "error": "invalid_checksum"},
+    "match": "contains"
+  },
+  {
+    "name": "empty string",
+    "input": {"isbn": ""},
+    "expect": {"valid": false, "error": "invalid_length"},
+    "match": "contains"
+  },
+  {
+    "name": "invalid character",
+    "input": {"isbn": "L"},
+    "expect": {"valid": false, "error": "invalid_digit"},
+    "match": "contains"
+  },
+  {
+    "name": "x not in check position",
+    "input": {"isbn": "01234567X9"},
+    "expect": {"valid": false, "error": "invalid_digit"},
+    "match": "contains"
+  },
+  {
+    "name": "too long",
+    "input": {"isbn": "01234567890123456789"},
+    "expect": {"valid": false, "error": "invalid_length"},
+    "match": "contains"
+  },
+  {
+    "name": "isbn-13 bad prefix",
+    "input": {"isbn": "9771234567898"},
+    "expect": {"valid": false, "error": "invalid_group"},
+    "match": "contains"
+  }
+]

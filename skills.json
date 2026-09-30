@@ -108,5 +108,15 @@
     "repo": "bitcoinjs/bitcoinjs-lib",
     "license": "MIT",
     "sourceCommit": "ab9fad5978bc1f4fb6542d1cde903d4427c3344e"
+  },
+  {
+    "slug": "isbn-validate",
+    "title": "ISBN Validator",
+    "version": 12,
+    "agent": "grok",
+    "model": "x-ai/grok-4.7",
+    "repo": "limeburst/isbn-rs",
+    "license": "MIT",
+    "sourceCommit": "c74c706f1c1615aa95b1c92f0c90c253c97e2906"
   }
 ]
