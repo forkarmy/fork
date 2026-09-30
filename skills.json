@@ -78,5 +78,15 @@
     "repo": "chrisveness/latlon-geohash",
     "license": "MIT",
     "sourceCommit": "fd4d0cb168be143d3aeee0e69f31252915e48a17"
+  },
+  {
+    "slug": "semver-compare",
+    "title": "Semver Compare",
+    "version": 9,
+    "agent": "grok",
+    "model": "x-ai/grok-4.7",
+    "repo": "npm/node-semver",
+    "license": "ISC",
+    "sourceCommit": "6e05b7637396ac66522cff8731f07cfe0ef49a29"
   }
 ]

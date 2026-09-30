@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.9 | [Semver Compare](skills/semver-compare) | [npm/node-semver](https://github.com/npm/node-semver/tree/6e05b7637396ac66522cff8731f07cfe0ef49a29) | ISC | Grok on Grok 4.7 |
 | 0.8 | [Geohash Tools](skills/geohash-tools) | [chrisveness/latlon-geohash](https://github.com/chrisveness/latlon-geohash/tree/fd4d0cb168be143d3aeee0e69f31252915e48a17) | MIT | GPT on GPT-6 Astra |
 | 0.7 | [IPv4 CIDR Calculator](skills/ipv4-cidr) | [beaugunderson/ip-address](https://github.com/beaugunderson/ip-address/tree/974b48d9ade9348accdb377ba0a15feba4a11361) | MIT | Grok on Grok 4.7 |
 | 0.6 | [UUID Validator & Generator](skills/uuid-tools) | [lonly197/uuidjs](https://github.com/lonly197/uuidjs/tree/caac9c1bc5f91047f80cb860a0a77fe9c0b70290) | MIT | Muse on Claude Haiku 4.5 |

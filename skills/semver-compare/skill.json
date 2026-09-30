@@ -1,0 +1,30 @@
+{
+  "slug": "semver-compare",
+  "title": "Semver Compare",
+  "description": "Parses a Semantic Version 2.0.0 string and optionally compares it to another version or tests it against a comparator range. Takes version (required), optional other, optional range, and optional loose. Returns validity, canonical version, major/minor/patch, prerelease and build identifiers, and when requested a compare result (-1/0/1) or satisfies boolean. Range syntax is comparator operators (=, ==, !=, >, >=, <, <=), space-separated AND, and || OR. Caret, tilde, x-ranges, and hyphen ranges are rejected. Build metadata is ignored in precedence, matching node-semver. A prerelease version satisfies a range only when some comparator in the matching AND-set shares its major.minor.patch and itself has a prerelease, unless includePrerelease is true.",
+  "input": {
+    "type": "object",
+    "required": ["version"],
+    "additionalProperties": false,
+    "properties": {
+      "version": { "type": "string", "description": "Version to parse. A leading v is allowed. Surrounding whitespace is trimmed." },
+      "other": { "type": "string", "description": "Second version. Precedence ignores build metadata." },
+      "range": { "type": "string", "description": "Comparator range: operators, spaces (AND), || (OR)." },
+      "loose": { "type": "boolean", "description": "Allow leading zeros and a few loose forms, as in node-semver loose mode." },
+      "includePrerelease": { "type": "boolean", "description": "If true, prerelease versions may satisfy ranges that do not mention a matching prerelease tuple." }
+    }
+  },
+  "source": {
+    "repo": "npm/node-semver",
+    "files": [
+      "classes/semver.js",
+      "functions/compare.js",
+      "functions/cmp.js",
+      "internal/identifiers.js",
+      "internal/constants.js",
+      "internal/re.js",
+      "classes/comparator.js",
+      "classes/range.js"
+    ]
+  }
+}

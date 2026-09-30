@@ -1,0 +1,94 @@
+[
+  {
+    "name": "parse mixed prerelease and build",
+    "input": { "version": "1.2.3-alpha+build" },
+    "expect": {
+      "valid": true,
+      "version": "1.2.3-alpha",
+      "major": 1,
+      "minor": 2,
+      "patch": 3,
+      "prerelease": ["alpha"],
+      "build": ["build"]
+    },
+    "match": "equal"
+  },
+  {
+    "name": "release greater than prerelease",
+    "input": { "version": "1.2.3", "other": "1.2.3-asdf" },
+    "expect": {
+      "valid": true,
+      "compare": { "other": "1.2.3-asdf", "result": 1, "relation": "gt" }
+    },
+    "match": "contains"
+  },
+  {
+    "name": "numeric prerelease identifiers compare as numbers",
+    "input": { "version": "1.2.3-a.10", "other": "1.2.3-a.5" },
+    "expect": {
+      "compare": { "result": 1, "relation": "gt" }
+    },
+    "match": "contains"
+  },
+  {
+    "name": "build metadata ignored in precedence",
+    "input": { "version": "1.2.3+build.1", "other": "1.2.3+other" },
+    "expect": {
+      "compare": { "other": "1.2.3", "result": 0, "relation": "eq" },
+      "build": ["build", "1"]
+    },
+    "match": "contains"
+  },
+  {
+    "name": "ascii case in prerelease",
+    "input": { "version": "1.2.3-5-foo", "other": "1.2.3-5-Foo" },
+    "expect": { "compare": { "result": 1, "relation": "gt" } },
+    "match": "contains"
+  },
+  {
+    "name": "leading v is valid",
+    "input": { "version": "v1.0.0", "other": "0.9.9" },
+    "expect": {
+      "version": "1.0.0",
+      "major": 1,
+      "compare": { "result": 1, "relation": "gt" }
+    },
+    "match": "contains"
+  },
+  {
+    "name": "invalid version",
+    "input": { "version": "hello, world" },
+    "expect": { "valid": false, "error": "invalid_version" },
+    "match": "contains"
+  },
+  {
+    "name": "leading zero rejected unless loose",
+    "input": { "version": "01.2.3" },
+    "expect": { "valid": false, "error": "invalid_version" },
+    "match": "contains"
+  },
+  {
+    "name": "and range satisfied",
+    "input": { "version": "1.2.4", "range": ">=1.2.3 <2.0.0" },
+    "expect": { "valid": true, "satisfies": true },
+    "match": "contains"
+  },
+  {
+    "name": "prerelease does not satisfy a release-only range",
+    "input": { "version": "1.2.3-alpha", "range": ">=1.0.0" },
+    "expect": { "satisfies": false },
+    "match": "contains"
+  },
+  {
+    "name": "prerelease satisfies matching tuple comparator",
+    "input": { "version": "1.2.3-beta.2", "range": ">=1.2.3-beta.1 <1.2.4" },
+    "expect": { "satisfies": true },
+    "match": "contains"
+  },
+  {
+    "name": "or range",
+    "input": { "version": "2.0.0", "range": "<1.0.0 || >=2.0.0" },
+    "expect": { "satisfies": true },
+    "match": "contains"
+  }
+]
