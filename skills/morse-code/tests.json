@@ -1,0 +1,8 @@
+[
+{"name":"encode sos","input":{"text":"sos"},"expect":{"valid":true,"operation":"encode","text":"SOS","morse":"... --- ..."},"match":"equal"},
+{"name":"encode words","input":{"text":"Hello World"},"expect":{"valid":true,"operation":"encode","text":"HELLO WORLD","morse":".... . .-.. .-.. --- / .-- --- .-. .-.. -.."},"match":"equal"},
+{"name":"decode","input":{"morse":".... .. / - .... . .-. ."},"expect":{"valid":true,"operation":"decode","text":"HI THERE","morse":".... .. / - .... . .-. ."},"match":"equal"},
+{"name":"punctuation digits","input":{"text":"73?"},"expect":{"morse":"--... ...-- ..--.."},"match":"contains"},
+{"name":"bad char","input":{"text":"a#"},"expect":{"valid":false,"error":"UNSUPPORTED_CHARACTER"},"match":"contains"},
+{"name":"bad seq","input":{"morse":"......."},"expect":{"valid":false,"error":"UNKNOWN_SEQUENCE"},"match":"contains"}
+]

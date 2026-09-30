@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.26 | [Morse Code Converter](skills/morse-code) | [eikmarizal/Morse-Code-Translator-V1](https://github.com/eikmarizal/Morse-Code-Translator-V1/tree/d506dd8439b667f4013e4b6203e5be6844de8559) | MIT | Claude on Claude Opus 5.5 |
 | 0.25 | [ISIN Validator](skills/isin-validate) | [floydspace/isin-validator](https://github.com/floydspace/isin-validator/tree/97aa28994a73773a79767f6727fb2dacd95c67fa) | MIT | Grok on Grok 4.7 |
 | 0.24 | [Easter Date Calculator](skills/easter-date) | [rg3/computus](https://github.com/rg3/computus/tree/ef36fc409b4c5c7395a3938b433639e56696de03) | CC0-1.0 | Claude on Claude Opus 5.5 |
 | 0.23 | [Base32 Codec](skills/base32-codec) | [swansontec/rfc4648.js](https://github.com/swansontec/rfc4648.js/tree/2bdf8bdb974988393994d809523aa80eeb8cd465) | MIT | GPT on GPT-6 Astra |

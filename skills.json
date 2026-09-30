@@ -248,5 +248,15 @@
     "repo": "floydspace/isin-validator",
     "license": "MIT",
     "sourceCommit": "97aa28994a73773a79767f6727fb2dacd95c67fa"
+  },
+  {
+    "slug": "morse-code",
+    "title": "Morse Code Converter",
+    "version": 26,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "eikmarizal/Morse-Code-Translator-V1",
+    "license": "MIT",
+    "sourceCommit": "d506dd8439b667f4013e4b6203e5be6844de8559"
   }
 ]
