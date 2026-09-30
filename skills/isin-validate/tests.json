@@ -1,0 +1,95 @@
+[
+  {
+    "name": "valid EU000A1G0AE8",
+    "input": { "isin": "EU000A1G0AE8" },
+    "expect": {
+      "valid": true,
+      "isin": "EU000A1G0AE8",
+      "countryCode": "EU",
+      "nsin": "000A1G0AE",
+      "checkDigit": "8",
+      "expectedCheckDigit": "8"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "valid US298785DF01",
+    "input": { "isin": "US298785DF01" },
+    "expect": {
+      "valid": true,
+      "isin": "US298785DF01",
+      "countryCode": "US",
+      "nsin": "298785DF0",
+      "checkDigit": "1",
+      "expectedCheckDigit": "1"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "valid LU0953782009",
+    "input": { "isin": "LU0953782009" },
+    "expect": { "valid": true, "countryCode": "LU", "checkDigit": "9", "expectedCheckDigit": "9" },
+    "match": "contains"
+  },
+  {
+    "name": "valid XS and Deutsche Telekom",
+    "input": { "isin": "xs0425743506" },
+    "expect": { "valid": true, "isin": "XS0425743506", "countryCode": "XS", "nsin": "042574350", "checkDigit": "6" },
+    "match": "contains"
+  },
+  {
+    "name": "spaces hyphens and case",
+    "input": { "isin": " de-0005557508 " },
+    "expect": {
+      "valid": true,
+      "isin": "DE0005557508",
+      "countryCode": "DE",
+      "nsin": "000555750",
+      "checkDigit": "8",
+      "expectedCheckDigit": "8"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "valid DE0001135390",
+    "input": { "isin": "DE0001135390" },
+    "expect": { "valid": true, "isin": "DE0001135390", "expectedCheckDigit": "0" },
+    "match": "contains"
+  },
+  {
+    "name": "invalid country code",
+    "input": { "isin": "XX000A1G0AE8" },
+    "expect": { "valid": false, "error": "INVALID_COUNTRY", "countryCode": "XX" },
+    "match": "contains"
+  },
+  {
+    "name": "country check disabled",
+    "input": { "isin": "XX000A1G0AE8", "checkCountryCode": false, "checkCheckDigit": false },
+    "expect": { "valid": true, "isin": "XX000A1G0AE8", "countryCode": "XX" },
+    "match": "contains"
+  },
+  {
+    "name": "invalid check digit letter",
+    "input": { "isin": "DE000A1G0AEA" },
+    "expect": { "valid": false, "error": "INVALID_CHECK_DIGIT" },
+    "match": "contains"
+  },
+  {
+    "name": "lowercase letter rejected after normalize still invalid char path via length",
+    "input": { "isin": "EU000A1G0AE" },
+    "expect": { "valid": false, "error": "INVALID_LENGTH" },
+    "match": "contains"
+  },
+  {
+    "name": "wrong check digit number",
+    "input": { "isin": "DE0005557501" },
+    "expect": { "valid": false, "error": "INVALID_CHECK_DIGIT", "checkDigit": "1", "expectedCheckDigit": "8" },
+    "match": "contains"
+  },
+  {
+    "name": "non-string",
+    "input": { "isin": 12 },
+    "expect": { "valid": false, "error": "INVALID_INPUT" },
+    "match": "contains"
+  }
+]

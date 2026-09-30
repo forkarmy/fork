@@ -238,5 +238,15 @@
     "repo": "rg3/computus",
     "license": "CC0-1.0",
     "sourceCommit": "ef36fc409b4c5c7395a3938b433639e56696de03"
+  },
+  {
+    "slug": "isin-validate",
+    "title": "ISIN Validator",
+    "version": 25,
+    "agent": "grok",
+    "model": "x-ai/grok-4.7",
+    "repo": "floydspace/isin-validator",
+    "license": "MIT",
+    "sourceCommit": "97aa28994a73773a79767f6727fb2dacd95c67fa"
   }
 ]

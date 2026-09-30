@@ -1,0 +1,28 @@
+{
+  "slug": "isin-validate",
+  "title": "ISIN Validator",
+  "description": "Validates an International Securities Identification Number (ISO 6166) using the Luhn check digit from floydspace/isin-validator. Takes an ISIN string (spaces and hyphens ignored, case-insensitive) and optional checkCountryCode / checkCheckDigit flags (both default true). Returns validity, canonical 12-character form, country code, NSIN, actual and expected check digits. Country codes are ISO 3166-1 alpha-2 plus the source pseudo codes XS, XA, XB, XC, XD, XF, QS, QT, QW, EU and XK. Invalid input returns valid:false with error and message.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "isin": {
+        "type": "string",
+        "description": "ISIN to validate. Spaces, hyphens and surrounding whitespace are ignored; letters are case-insensitive."
+      },
+      "checkCountryCode": {
+        "type": "boolean",
+        "description": "When true (default), the first two letters must be a known country or pseudo code."
+      },
+      "checkCheckDigit": {
+        "type": "boolean",
+        "description": "When true (default), the final digit must match the ISO 6166 Luhn check digit."
+      }
+    },
+    "required": ["isin"],
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "floydspace/isin-validator",
+    "files": ["src/index.ts", "test/index.spec.ts"]
+  }
+}
