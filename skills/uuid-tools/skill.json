@@ -1,0 +1,24 @@
+{
+  "slug": "uuid-tools",
+  "title": "UUID Validator & Generator",
+  "description": "Validates UUID strings against RFC 4122 format (versions 1-5, detecting version and variant) and generates new v4 UUIDs. Takes either a UUID string to validate or generates a new UUID; returns parsed fields or a newly generated UUID.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "enum": ["validate", "generate"],
+        "description": "Whether to validate a UUID string or generate a new one"
+      },
+      "uuid": {
+        "type": "string",
+        "description": "Required for validate action: the UUID string to validate (case-insensitive, braces allowed)"
+      }
+    },
+    "required": ["action"]
+  },
+  "source": {
+    "repo": "lonly197/uuidjs",
+    "files": ["src/index.js"]
+  }
+}

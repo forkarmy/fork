@@ -1,0 +1,151 @@
+[
+  {
+    "name": "validate canonical v4 UUID",
+    "input": {
+      "action": "validate",
+      "uuid": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "expect": {
+      "valid": true,
+      "canonical": "550e8400-e29b-41d4-a716-446655440000",
+      "version": 4,
+      "versionLabel": "random",
+      "variant": "rfc_4122"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "validate case-insensitive UUID",
+    "input": {
+      "action": "validate",
+      "uuid": "550E8400-E29B-41D4-A716-446655440000"
+    },
+    "expect": {
+      "valid": true,
+      "canonical": "550e8400-e29b-41d4-a716-446655440000",
+      "version": 4,
+      "variant": "rfc_4122"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "validate braced UUID",
+    "input": {
+      "action": "validate",
+      "uuid": "{550e8400-e29b-41d4-a716-446655440000}"
+    },
+    "expect": {
+      "valid": true,
+      "canonical": "550e8400-e29b-41d4-a716-446655440000",
+      "version": 4
+    },
+    "match": "contains"
+  },
+  {
+    "name": "validate v1 time-based UUID",
+    "input": {
+      "action": "validate",
+      "uuid": "c232ab00-9414-11ec-b3c8-9f6bdecedce6"
+    },
+    "expect": {
+      "valid": true,
+      "version": 1,
+      "versionLabel": "time_based",
+      "canonical": "c232ab00-9414-11ec-b3c8-9f6bdecedce6"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "validate v3 name-md5 UUID",
+    "input": {
+      "action": "validate",
+      "uuid": "622fe1f2-fee0-3e9a-b29b-ae50af006e2c"
+    },
+    "expect": {
+      "valid": true,
+      "version": 3,
+      "versionLabel": "name_md5"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "validate v5 name-sha1 UUID",
+    "input": {
+      "action": "validate",
+      "uuid": "2c0d9d28-d27e-5b85-a941-3b5f8a72f560"
+    },
+    "expect": {
+      "valid": true,
+      "version": 5,
+      "versionLabel": "name_sha1"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "reject invalid UUID with non-hex character",
+    "input": {
+      "action": "validate",
+      "uuid": "550e8400-e29b-41d4-a716-44665544000g"
+    },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  },
+  {
+    "name": "reject UUID with wrong length",
+    "input": {
+      "action": "validate",
+      "uuid": "550e8400-e29b-41d4-a716-44665544000"
+    },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  },
+  {
+    "name": "reject wrong variant (NCS)",
+    "input": {
+      "action": "validate",
+      "uuid": "550e8400-e29b-41d4-2716-446655440000"
+    },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  },
+  {
+    "name": "reject unsupported version 0",
+    "input": {
+      "action": "validate",
+      "uuid": "550e8400-e29b-01d4-a716-446655440000"
+    },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  },
+  {
+    "name": "reject unsupported version 6",
+    "input": {
+      "action": "validate",
+      "uuid": "550e8400-e29b-61d4-a716-446655440000"
+    },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  },
+  {
+    "name": "generate UUID v4",
+    "input": {
+      "action": "generate"
+    },
+    "expect": {
+      "version": 4,
+      "versionLabel": "random",
+      "variant": "rfc_4122"
+    },
+    "match": "contains"
+  }
+]
