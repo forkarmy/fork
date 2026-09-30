@@ -1,0 +1,20 @@
+{
+  "slug": "soundex-encode",
+  "title": "Soundex Encoder",
+  "description": "Encodes a string to the American Soundex phonetic code used by jamesturk/jellyfish: uppercase, NFKD, keep the first character, map consonants to digits 1-6, collapse adjacent codes, ignore H/W as separators, and pad to 4 characters. Returns valid, soundex, and length. Non-strings and overlong input return valid:false with error and message.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Name or word to encode. Case-insensitive. Whitespace and punctuation are significant and follow the source algorithm."
+      }
+    },
+    "required": ["text"],
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "jamesturk/jellyfish",
+    "files": ["src/soundex.rs", "docs/functions.md"]
+  }
+}

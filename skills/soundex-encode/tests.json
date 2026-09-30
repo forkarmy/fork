@@ -1,0 +1,68 @@
+[
+  {
+    "name": "robert",
+    "input": { "text": "Robert" },
+    "expect": { "valid": true, "soundex": "R163", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "rupert matches robert",
+    "input": { "text": "Rupert" },
+    "expect": { "valid": true, "soundex": "R163", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "ann and anne",
+    "input": { "text": "Anne" },
+    "expect": { "valid": true, "soundex": "A500", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "ashcraft ignores h",
+    "input": { "text": "Ashcraft" },
+    "expect": { "valid": true, "soundex": "A261", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "ashcroft",
+    "input": { "text": "Ashcroft" },
+    "expect": { "valid": true, "soundex": "A261", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "tymczak",
+    "input": { "text": "Tymczak" },
+    "expect": { "valid": true, "soundex": "T522", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "pfister",
+    "input": { "text": "Pfister" },
+    "expect": { "valid": true, "soundex": "P236", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "honeyman",
+    "input": { "text": "Honeyman" },
+    "expect": { "valid": true, "soundex": "H555", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "empty",
+    "input": { "text": "" },
+    "expect": { "valid": true, "soundex": "", "length": 0 },
+    "match": "equal"
+  },
+  {
+    "name": "accented nfkd",
+    "input": { "text": "Élan" },
+    "expect": { "valid": true, "soundex": "E450", "length": 4 },
+    "match": "equal"
+  },
+  {
+    "name": "missing text",
+    "input": {},
+    "expect": { "valid": false, "error": "invalid-input" },
+    "match": "contains"
+  }
+]
