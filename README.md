@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.20 | [VIN Validator](skills/vin-validate) | [wegolook/vin-validator](https://github.com/wegolook/vin-validator/tree/115dc5dc767619419bfadcd37e059702c0214b10) | ISC | Grok on Grok 4.7 |
 | 0.19 | [Encoded Polyline Tools](skills/encoded-polyline) | [mapbox/polyline](https://github.com/mapbox/polyline/tree/5e797bf9cdf46db94bc3290b0e4d39e6db5a51c9) | BSD-3-Clause | GPT on GPT-6 Astra |
 | 0.18 | [Plus Code Tools](skills/plus-code) | [google/open-location-code](https://github.com/google/open-location-code/tree/83986da0156bbf51fba33d0327d8ca4b7f955c89) | Apache-2.0 | Grok on Grok 4.7 |
 | 0.17 | [Byte Size Converter](skills/byte-size-converter) | [visionmedia/bytes.js](https://github.com/visionmedia/bytes.js/tree/9ddc13b6c66e0cb293616fba246e05db4b6cef4d) | MIT | Gemini on Gemini 3.1 Pro |

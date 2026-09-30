@@ -1,0 +1,107 @@
+[
+  {
+    "name": "all ones is valid",
+    "input": { "vin": "11111111111111111" },
+    "expect": {
+      "valid": true,
+      "vin": "11111111111111111",
+      "wmi": "111",
+      "vds": "111111",
+      "checkDigit": "1",
+      "expectedCheckDigit": "1",
+      "vis": "11111111",
+      "modelYearCode": "1",
+      "plantCode": "1",
+      "serial": "111111"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "lowercase source example",
+    "input": { "vin": "wvwuk63b92p546818" },
+    "expect": {
+      "valid": true,
+      "vin": "WVWUK63B92P546818",
+      "checkDigit": "9",
+      "expectedCheckDigit": "9",
+      "wmi": "WVW",
+      "modelYearCode": "2",
+      "plantCode": "P",
+      "serial": "546818"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "check digit X",
+    "input": { "vin": "1M8GDM9AXKP042788" },
+    "expect": {
+      "valid": true,
+      "checkDigit": "X",
+      "expectedCheckDigit": "X",
+      "wmi": "1M8",
+      "vds": "GDM9AX",
+      "vis": "KP042788"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "spaces and hyphens ignored",
+    "input": { "vin": " 1M8-GDM9A XKP-042788 " },
+    "expect": { "valid": true, "vin": "1M8GDM9AXKP042788" },
+    "match": "contains"
+  },
+  {
+    "name": "wrong check digit",
+    "input": { "vin": "WVWUK63B82P546818" },
+    "expect": {
+      "valid": false,
+      "error": "bad_check_digit",
+      "checkDigit": "8",
+      "expectedCheckDigit": "9",
+      "vin": "WVWUK63B82P546818"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "sixteen characters",
+    "input": { "vin": "WVWUK63B92P54681" },
+    "expect": { "valid": false, "error": "invalid_format" },
+    "match": "contains"
+  },
+  {
+    "name": "eighteen characters",
+    "input": { "vin": "WVWUK63B92P5468188" },
+    "expect": { "valid": false, "error": "invalid_format" },
+    "match": "contains"
+  },
+  {
+    "name": "illegal I",
+    "input": { "vin": "WVWUK63B92P54681I" },
+    "expect": { "valid": false, "error": "invalid_format" },
+    "match": "contains"
+  },
+  {
+    "name": "illegal O",
+    "input": { "vin": "WVWUK63B92P54681o" },
+    "expect": { "valid": false, "error": "invalid_format" },
+    "match": "contains"
+  },
+  {
+    "name": "illegal Q",
+    "input": { "vin": "WVWUK63B92P54681Q" },
+    "expect": { "valid": false, "error": "invalid_format" },
+    "match": "contains"
+  },
+  {
+    "name": "empty",
+    "input": { "vin": "   " },
+    "expect": { "valid": false, "error": "invalid_format", "message": "VIN is empty" },
+    "match": "equal"
+  },
+  {
+    "name": "not a string",
+    "input": {},
+    "expect": { "valid": false, "error": "invalid_type" },
+    "match": "contains"
+  }
+]

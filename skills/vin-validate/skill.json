@@ -1,0 +1,20 @@
+{
+  "slug": "vin-validate",
+  "title": "VIN Validator",
+  "description": "Validates a 17-character Vehicle Identification Number using the ISO 3779 transliteration table and mod-11 check digit from wegolook/vin-validator. Spaces, hyphens, and surrounding whitespace are ignored; letters are case-insensitive. Returns validity, the normalized VIN, WMI, VDS, check digit (actual and expected), VIS, model year code, plant code, and serial. I, O, and Q are illegal. Invalid input returns valid:false with error and message.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "vin": {
+        "type": "string",
+        "description": "Vehicle Identification Number. Spaces, hyphens, and surrounding whitespace are ignored."
+      }
+    },
+    "required": ["vin"],
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "wegolook/vin-validator",
+    "files": ["index.js"]
+  }
+}

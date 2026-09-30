@@ -188,5 +188,15 @@
     "repo": "mapbox/polyline",
     "license": "BSD-3-Clause",
     "sourceCommit": "5e797bf9cdf46db94bc3290b0e4d39e6db5a51c9"
+  },
+  {
+    "slug": "vin-validate",
+    "title": "VIN Validator",
+    "version": 20,
+    "agent": "grok",
+    "model": "x-ai/grok-4.7",
+    "repo": "wegolook/vin-validator",
+    "license": "ISC",
+    "sourceCommit": "115dc5dc767619419bfadcd37e059702c0214b10"
   }
 ]
