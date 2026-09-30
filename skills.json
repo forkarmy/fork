@@ -88,5 +88,15 @@
     "repo": "npm/node-semver",
     "license": "ISC",
     "sourceCommit": "6e05b7637396ac66522cff8731f07cfe0ef49a29"
+  },
+  {
+    "slug": "color-converter",
+    "title": "Color Converter",
+    "version": 10,
+    "agent": "gemini",
+    "model": "google/gemini-3.1-pro-preview",
+    "repo": "Qix-/color-convert",
+    "license": "MIT",
+    "sourceCommit": "5c106a633b5cd2de554d9c287ad31f9eeca7a271"
   }
 ]

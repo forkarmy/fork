@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Hex Red",
+    "input": { "format": "hex", "value": "#FF0000" },
+    "expect": {
+      "valid": true,
+      "hex": "#FF0000",
+      "rgb": [255, 0, 0],
+      "hsl": [0, 100, 50],
+      "hsv": [0, 100, 100],
+      "cmyk": [0, 100, 100, 0]
+    },
+    "match": "contains"
+  },
+  {
+    "name": "RGB Green",
+    "input": { "format": "rgb", "value": [0, 255, 0] },
+    "expect": {
+      "valid": true,
+      "hex": "#00FF00",
+      "rgb": [0, 255, 0],
+      "hsl": [120, 100, 50],
+      "cmyk": [100, 0, 100, 0]
+    },
+    "match": "contains"
+  },
+  {
+    "name": "HSL Blue",
+    "input": { "format": "hsl", "value": [240, 100, 50] },
+    "expect": {
+      "valid": true,
+      "hex": "#0000FF",
+      "rgb": [0, 0, 255]
+    },
+    "match": "contains"
+  },
+  {
+    "name": "HSV White",
+    "input": { "format": "hsv", "value": [0, 0, 100] },
+    "expect": {
+      "valid": true,
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255]
+    },
+    "match": "contains"
+  },
+  {
+    "name": "CMYK Black",
+    "input": { "format": "cmyk", "value": [0, 0, 0, 100] },
+    "expect": {
+      "valid": true,
+      "hex": "#000000",
+      "rgb": [0, 0, 0]
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Invalid format",
+    "input": { "format": "unknown", "value": "what" },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  }
+]

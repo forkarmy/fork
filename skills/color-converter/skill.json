@@ -1,0 +1,17 @@
+{
+  "slug": "color-converter",
+  "title": "Color Converter",
+  "description": "Converts colors between different formats like RGB, HEX, HSL, HSV, CMYK, XYZ, and LAB.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "format": { "type": "string", "enum": ["rgb", "hex", "hsl", "hsv", "cmyk", "xyz", "lab"] },
+      "value": { "type": ["string", "array"] }
+    },
+    "required": ["format", "value"]
+  },
+  "source": {
+    "repo": "Qix-/color-convert",
+    "files": ["conversions.js", "index.js", "route.js"]
+  }
+}
