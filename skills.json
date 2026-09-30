@@ -128,5 +128,15 @@
     "repo": "braintree/card-validator",
     "license": "MIT",
     "sourceCommit": "a260bc94ce1772b00c0cae0d2f3d73f690338d55"
+  },
+  {
+    "slug": "levenshtein-distance",
+    "title": "Levenshtein Distance",
+    "version": 14,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "sindresorhus/leven",
+    "license": "MIT",
+    "sourceCommit": "0c8c7f459c3bf29fcf4a0c679f7cced3c6c28a53"
   }
 ]

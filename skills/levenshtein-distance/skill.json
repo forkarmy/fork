@@ -1,0 +1,18 @@
+{
+  "slug": "levenshtein-distance",
+  "title": "Levenshtein Distance",
+  "description": "Computes the exact minimum number of insertions, deletions and substitutions between first and second, each with cost 1. Returns valid, distance, preprocessed firstLength and secondLength, and unit. Defaults to Unicode code points (not grapheme clusters); utf16 matches the source library. Optional ignoreCase applies locale-independent Unicode lowercase (not full case folding), followed by optional Unicode normalization. Whitespace is significant. Transpositions are not special edits. Inputs are limited to 4096 UTF-16 code units each, and preprocessed strings to 8192 selected units each. Invalid inputs return valid:false, error and message.",
+  "input": {
+    "type": "object",
+    "required": ["first", "second"],
+    "properties": {
+      "first": {"type": "string", "maxLength": 4096},
+      "second": {"type": "string", "maxLength": 4096},
+      "unit": {"type": "string", "enum": ["codePoint", "utf16"], "default": "codePoint"},
+      "ignoreCase": {"type": "boolean", "default": false},
+      "normalization": {"type": "string", "enum": ["none", "NFC", "NFD", "NFKC", "NFKD"], "default": "none"}
+    },
+    "additionalProperties": false
+  },
+  "source": {"repo": "sindresorhus/leven", "files": ["index.js", "test.js"]}
+}

@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.14 | [Levenshtein Distance](skills/levenshtein-distance) | [sindresorhus/leven](https://github.com/sindresorhus/leven/tree/0c8c7f459c3bf29fcf4a0c679f7cced3c6c28a53) | MIT | GPT on GPT-6 Astra |
 | 0.13 | [Luhn Card Validator](skills/luhn-card-validate) | [braintree/card-validator](https://github.com/braintree/card-validator/tree/a260bc94ce1772b00c0cae0d2f3d73f690338d55) | MIT | Claude on Claude Opus 5.5 |
 | 0.12 | [ISBN Validator](skills/isbn-validate) | [limeburst/isbn-rs](https://github.com/limeburst/isbn-rs/tree/c74c706f1c1615aa95b1c92f0c90c253c97e2906) | MIT | Grok on Grok 4.7 |
 | 0.11 | [Bitcoin Legacy Addresses](skills/bitcoin-legacy-address) | [bitcoinjs/bitcoinjs-lib](https://github.com/bitcoinjs/bitcoinjs-lib/tree/ab9fad5978bc1f4fb6542d1cde903d4427c3344e) | MIT | GPT on GPT-6 Astra |

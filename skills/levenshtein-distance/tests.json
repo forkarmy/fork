@@ -1,0 +1,14 @@
+[
+ {"name":"upstream kitten sitting","input":{"first":"kitten","second":"sitting"},"expect":{"valid":true,"distance":3,"firstLength":6,"secondLength":7,"unit":"codePoint"},"match":"equal"},
+ {"name":"upstream mixed edits","input":{"first":"xabxcdxxefxgx","second":"1ab2cd34ef5g6"},"expect":{"valid":true,"distance":6},"match":"contains"},
+ {"name":"upstream different words","input":{"first":"javawasneat","second":"scalaisgreat"},"expect":{"valid":true,"distance":7},"match":"contains"},
+ {"name":"upstream Chinese","input":{"first":"因為我是中國人所以我會說中文","second":"因為我是英國人所以我會說英文"},"expect":{"valid":true,"distance":2},"match":"contains"},
+ {"name":"both empty","input":{"first":"","second":""},"expect":{"valid":true,"distance":0,"firstLength":0,"secondLength":0,"unit":"codePoint"},"match":"equal"},
+ {"name":"empty second swaps operands","input":{"first":"abc","second":""},"expect":{"valid":true,"distance":3,"firstLength":3,"secondLength":0,"unit":"codePoint"},"match":"equal"},
+ {"name":"astral code point deletion","input":{"first":"a😀b","second":"ab"},"expect":{"valid":true,"distance":1,"firstLength":3,"secondLength":2,"unit":"codePoint"},"match":"equal"},
+ {"name":"astral utf16 deletion","input":{"first":"a😀b","second":"ab","unit":"utf16"},"expect":{"valid":true,"distance":2,"firstLength":4,"secondLength":2,"unit":"utf16"},"match":"equal"},
+ {"name":"normalize and lowercase","input":{"first":"CAFÉ","second":"café","ignoreCase":true,"normalization":"NFC"},"expect":{"valid":true,"distance":0,"firstLength":4,"secondLength":4,"unit":"codePoint"},"match":"equal"},
+ {"name":"no implicit normalization","input":{"first":"é","second":"é"},"expect":{"valid":true,"distance":2,"firstLength":1,"secondLength":2,"unit":"codePoint"},"match":"equal"},
+ {"name":"transposition is two edits","input":{"first":"ab","second":"ba"},"expect":{"valid":true,"distance":2},"match":"contains"},
+ {"name":"reject non-string","input":{"first":123,"second":"123"},"expect":{"valid":false,"error":"INVALID_INPUT","message":"first and second must be strings."},"match":"equal"}
+]
