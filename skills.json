@@ -198,5 +198,15 @@
     "repo": "wegolook/vin-validator",
     "license": "ISC",
     "sourceCommit": "115dc5dc767619419bfadcd37e059702c0214b10"
+  },
+  {
+    "slug": "number-to-words",
+    "title": "Number To Words",
+    "version": 21,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "marlun78/number-to-words",
+    "license": "MIT",
+    "sourceCommit": "2b810ab7efffecb48941b1e07833d49604144569"
   }
 ]

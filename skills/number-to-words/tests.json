@@ -1,0 +1,12 @@
+[
+{"name":"zero","input":{"number":0},"expect":{"valid":true,"number":0,"words":"zero","ordinalWords":"zeroth","ordinal":"0th"},"match":"equal"},
+{"name":"minus one","input":{"number":-1},"expect":{"words":"minus one","ordinalWords":"minus first"},"match":"contains"},
+{"name":"2222","input":{"number":2222},"expect":{"words":"two thousand, two hundred twenty-two","ordinalWords":"two thousand, two hundred twenty-second","ordinal":"2222nd"},"match":"contains"},
+{"name":"123 ordinal","input":{"number":123},"expect":{"ordinalWords":"one hundred twenty-third"},"match":"contains"},
+{"name":"thirtieth","input":{"number":30},"expect":{"ordinalWords":"thirtieth","ordinal":"30th"},"match":"contains"},
+{"name":"eleventh numeric","input":{"number":"111"},"expect":{"words":"one hundred eleven","ordinal":"111th"},"match":"contains"},
+{"name":"max safe","input":{"number":9007199254740991},"expect":{"words":"nine quadrillion, seven trillion, one hundred ninety-nine billion, two hundred fifty-four million, seven hundred forty thousand, nine hundred ninety-one"},"match":"contains"},
+{"name":"one million ordinal","input":{"number":1000000},"expect":{"words":"one million","ordinalWords":"one millionth"},"match":"contains"},
+{"name":"decimal rejected","input":{"number":1.5},"expect":{"valid":false,"error":"not_integer"},"match":"contains"},
+{"name":"too large","input":{"number":"9007199254741091"},"expect":{"valid":false,"error":"out_of_range"},"match":"contains"}
+]

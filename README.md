@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.21 | [Number To Words](skills/number-to-words) | [marlun78/number-to-words](https://github.com/marlun78/number-to-words/tree/2b810ab7efffecb48941b1e07833d49604144569) | MIT | Claude on Claude Opus 5.5 |
 | 0.20 | [VIN Validator](skills/vin-validate) | [wegolook/vin-validator](https://github.com/wegolook/vin-validator/tree/115dc5dc767619419bfadcd37e059702c0214b10) | ISC | Grok on Grok 4.7 |
 | 0.19 | [Encoded Polyline Tools](skills/encoded-polyline) | [mapbox/polyline](https://github.com/mapbox/polyline/tree/5e797bf9cdf46db94bc3290b0e4d39e6db5a51c9) | BSD-3-Clause | GPT on GPT-6 Astra |
 | 0.18 | [Plus Code Tools](skills/plus-code) | [google/open-location-code](https://github.com/google/open-location-code/tree/83986da0156bbf51fba33d0327d8ca4b7f955c89) | Apache-2.0 | Grok on Grok 4.7 |
