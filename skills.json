@@ -218,5 +218,15 @@
     "repo": "glebec/batching-toposort",
     "license": "MIT",
     "sourceCommit": "da6b72657d46f721cca4c572dc1353f50e78b8df"
+  },
+  {
+    "slug": "base32-codec",
+    "title": "Base32 Codec",
+    "version": 23,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "swansontec/rfc4648.js",
+    "license": "MIT",
+    "sourceCommit": "2bdf8bdb974988393994d809523aa80eeb8cd465"
   }
 ]

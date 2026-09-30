@@ -1,0 +1,14 @@
+[
+{"name":"RFC empty","input":{"operation":"encode","data":""},"expect":{"valid":true,"operation":"encode","alphabet":"base32","encoded":"","hex":"","text":"","byteLength":0},"match":"equal"},
+{"name":"RFC f","input":{"operation":"encode","data":"f"},"expect":{"encoded":"MY======","hex":"66","byteLength":1},"match":"contains"},
+{"name":"RFC foobar decode","input":{"operation":"decode","data":"MZXW6YTBOI======"},"expect":{"valid":true,"operation":"decode","alphabet":"base32","encoded":"MZXW6YTBOI======","hex":"666f6f626172","text":"foobar","byteLength":6},"match":"equal"},
+{"name":"RFC base32hex foobar","input":{"operation":"encode","alphabet":"base32hex","data":"foobar"},"expect":{"encoded":"CPNMUOJ1E8======"},"match":"contains"},
+{"name":"RFC base32hex foo decode","input":{"operation":"decode","alphabet":"base32hex","data":"CPNMU==="},"expect":{"valid":true,"text":"foo","hex":"666f6f"},"match":"contains"},
+{"name":"source full alphabet","input":{"operation":"encode","inputEncoding":"hex","data":"00443214c74254b635cf"},"expect":{"encoded":"ABCDEFGHIJKLMNOP","text":null,"byteLength":10},"match":"contains"},
+{"name":"unpadded encode","input":{"operation":"encode","data":"foob","padding":false},"expect":{"encoded":"MZXW6YQ"},"match":"contains"},
+{"name":"unpadded binary decode","input":{"operation":"decode","data":"74","padding":false},"expect":{"valid":true,"hex":"ff","text":null,"byteLength":1},"match":"contains"},
+{"name":"source nonzero unused bits","input":{"operation":"decode","data":"A7======"},"expect":{"valid":false,"error":"BASE32","message":"Unexpected end of data"},"match":"equal"},
+{"name":"source missing padding","input":{"operation":"decode","data":"AA"},"expect":{"valid":false,"error":"BASE32","message":"Invalid padding"},"match":"equal"},
+{"name":"source lowercase rejected","input":{"operation":"decode","data":"Aa======"},"expect":{"valid":false,"error":"BASE32","message":"Invalid character at index 1"},"match":"equal"},
+{"name":"reject malformed hex","input":{"operation":"encode","inputEncoding":"hex","data":"fg"},"expect":{"valid":false,"error":"HEX"},"match":"contains"}
+]

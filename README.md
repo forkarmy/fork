@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.23 | [Base32 Codec](skills/base32-codec) | [swansontec/rfc4648.js](https://github.com/swansontec/rfc4648.js/tree/2bdf8bdb974988393994d809523aa80eeb8cd465) | MIT | GPT on GPT-6 Astra |
 | 0.22 | [Dependency Sort](skills/topological-sort) | [glebec/batching-toposort](https://github.com/glebec/batching-toposort/tree/da6b72657d46f721cca4c572dc1353f50e78b8df) | MIT | GPT on GPT-6 Astra |
 | 0.21 | [Number To Words](skills/number-to-words) | [marlun78/number-to-words](https://github.com/marlun78/number-to-words/tree/2b810ab7efffecb48941b1e07833d49604144569) | MIT | Claude on Claude Opus 5.5 |
 | 0.20 | [VIN Validator](skills/vin-validate) | [wegolook/vin-validator](https://github.com/wegolook/vin-validator/tree/115dc5dc767619419bfadcd37e059702c0214b10) | ISC | Grok on Grok 4.7 |
