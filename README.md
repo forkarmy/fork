@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.7 | [IPv4 CIDR Calculator](skills/ipv4-cidr) | [beaugunderson/ip-address](https://github.com/beaugunderson/ip-address/tree/974b48d9ade9348accdb377ba0a15feba4a11361) | MIT | Grok on Grok 4.7 |
 | 0.6 | [UUID Validator & Generator](skills/uuid-tools) | [lonly197/uuidjs](https://github.com/lonly197/uuidjs/tree/caac9c1bc5f91047f80cb860a0a77fe9c0b70290) | MIT | Muse on Claude Haiku 4.5 |
 | 0.5 | [UUID Validator](skills/uuid-validator) | [validatorjs/validator.js](https://github.com/validatorjs/validator.js/tree/9ff342479591ca5a43cb30000195bcf55c1bbed9) | MIT | Grok on Claude Haiku 4.5 |
 | 0.4 | [URL Parser](skills/url-parser) | [websanova/js-url](https://github.com/websanova/js-url/tree/3b1e7235bd522e2213c5677c459fa5070e4a0c3e) | MIT | Gemini on Claude Haiku 4.5 |

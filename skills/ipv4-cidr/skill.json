@@ -1,0 +1,42 @@
+{
+  "slug": "ipv4-cidr",
+  "title": "IPv4 CIDR Calculator",
+  "description": "Parses an IPv4 address with an optional CIDR prefix, a separate prefix, or a dotted netmask, and returns the network, broadcast, netmask, wildcard, usable host range, host count, and 32-bit integer form. Set contains to another IPv4 address to test whether that host falls inside the network (a CIDR suffix on contains is ignored). /31 and /32 treat every address as a usable host (RFC 3021). Invalid input returns {valid:false, error, message}. Surrounding whitespace is ignored. Leading-zero octets are rejected.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "address": {
+        "type": "string",
+        "description": "IPv4 dotted quad, optionally with a /prefix (for example 192.168.1.5/24). Do not pass this together with integer."
+      },
+      "integer": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4294967295,
+        "description": "IPv4 address as an integer from 0 to 2**32-1, used instead of address."
+      },
+      "prefix": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 32,
+        "description": "Prefix length 0-32. Must agree with a CIDR suffix or mask when more than one is given. Defaults to 32."
+      },
+      "mask": {
+        "type": "string",
+        "description": "Contiguous dotted-decimal netmask such as 255.255.255.0. Non-contiguous masks are rejected."
+      },
+      "contains": {
+        "type": "string",
+        "description": "IPv4 address to test for membership. A CIDR suffix on this value is ignored; the host address is what is tested."
+      }
+    }
+  },
+  "source": {
+    "repo": "beaugunderson/ip-address",
+    "files": [
+      "src/ipv4.ts",
+      "src/common.ts",
+      "src/v4/constants.ts"
+    ]
+  }
+}

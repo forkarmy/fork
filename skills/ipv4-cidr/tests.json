@@ -1,0 +1,239 @@
+[
+  {
+    "name": "slash-24 host bits cleared and broadcast is inside",
+    "input": { "address": "192.168.1.5/24", "contains": "192.168.1.255" },
+    "expect": {
+      "valid": true,
+      "address": "192.168.1.5",
+      "prefix": 24,
+      "integer": 3232235781,
+      "octets": [192, 168, 1, 5],
+      "network": "192.168.1.0",
+      "broadcast": "192.168.1.255",
+      "netmask": "255.255.255.0",
+      "wildcard": "0.0.0.255",
+      "first_host": "192.168.1.1",
+      "last_host": "192.168.1.254",
+      "host_count": 254,
+      "total_addresses": 256,
+      "network_cidr": "192.168.1.0/24",
+      "is_network_address": false,
+      "contains": true
+    },
+    "match": "equal"
+  },
+  {
+    "name": "slash-16 loopback bounds from ip-address tests",
+    "input": { "address": "127.0.0.1/16" },
+    "expect": {
+      "valid": true,
+      "address": "127.0.0.1",
+      "prefix": 16,
+      "integer": 2130706433,
+      "octets": [127, 0, 0, 1],
+      "network": "127.0.0.0",
+      "broadcast": "127.0.255.255",
+      "netmask": "255.255.0.0",
+      "wildcard": "0.0.255.255",
+      "first_host": "127.0.0.1",
+      "last_host": "127.0.255.254",
+      "host_count": 65534,
+      "total_addresses": 65536,
+      "network_cidr": "127.0.0.0/16",
+      "is_network_address": false,
+      "contains": null
+    },
+    "match": "equal"
+  },
+  {
+    "name": "fromInteger 432432423 is 25.198.101.39",
+    "input": { "integer": 432432423 },
+    "expect": {
+      "valid": true,
+      "address": "25.198.101.39",
+      "prefix": 32,
+      "integer": 432432423,
+      "octets": [25, 198, 101, 39],
+      "network": "25.198.101.39",
+      "broadcast": "25.198.101.39",
+      "netmask": "255.255.255.255",
+      "wildcard": "0.0.0.0",
+      "first_host": "25.198.101.39",
+      "last_host": "25.198.101.39",
+      "host_count": 1,
+      "total_addresses": 1,
+      "network_cidr": "25.198.101.39/32",
+      "is_network_address": true,
+      "contains": null
+    },
+    "match": "equal"
+  },
+  {
+    "name": "issue 39 network form 205.65.224.110/29",
+    "input": { "address": "205.65.224.110/29" },
+    "expect": {
+      "valid": true,
+      "address": "205.65.224.110",
+      "prefix": 29,
+      "integer": 3443646574,
+      "octets": [205, 65, 224, 110],
+      "network": "205.65.224.104",
+      "broadcast": "205.65.224.111",
+      "netmask": "255.255.255.248",
+      "wildcard": "0.0.0.7",
+      "first_host": "205.65.224.105",
+      "last_host": "205.65.224.110",
+      "host_count": 6,
+      "total_addresses": 8,
+      "network_cidr": "205.65.224.104/29",
+      "is_network_address": false,
+      "contains": null
+    },
+    "match": "equal"
+  },
+  {
+    "name": "dotted mask 255.255.255.0 is a /24",
+    "input": { "address": "192.168.1.1", "mask": "255.255.255.0" },
+    "expect": {
+      "valid": true,
+      "address": "192.168.1.1",
+      "prefix": 24,
+      "integer": 3232235777,
+      "octets": [192, 168, 1, 1],
+      "network": "192.168.1.0",
+      "broadcast": "192.168.1.255",
+      "netmask": "255.255.255.0",
+      "wildcard": "0.0.0.255",
+      "first_host": "192.168.1.1",
+      "last_host": "192.168.1.254",
+      "host_count": 254,
+      "total_addresses": 256,
+      "network_cidr": "192.168.1.0/24",
+      "is_network_address": false,
+      "contains": null
+    },
+    "match": "equal"
+  },
+  {
+    "name": "separate prefix 10.20.30.40/12 networks to 10.16.0.0",
+    "input": { "address": "10.20.30.40", "prefix": 12 },
+    "expect": {
+      "valid": true,
+      "address": "10.20.30.40",
+      "prefix": 12,
+      "integer": 169090600,
+      "octets": [10, 20, 30, 40],
+      "network": "10.16.0.0",
+      "broadcast": "10.31.255.255",
+      "netmask": "255.240.0.0",
+      "wildcard": "0.15.255.255",
+      "first_host": "10.16.0.1",
+      "last_host": "10.31.255.254",
+      "host_count": 1048574,
+      "total_addresses": 1048576,
+      "network_cidr": "10.16.0.0/12",
+      "is_network_address": false,
+      "contains": null
+    },
+    "match": "equal"
+  },
+  {
+    "name": "slash-0 covers the whole address space",
+    "input": { "address": "10.0.0.1/0" },
+    "expect": {
+      "valid": true,
+      "address": "10.0.0.1",
+      "prefix": 0,
+      "integer": 167772161,
+      "octets": [10, 0, 0, 1],
+      "network": "0.0.0.0",
+      "broadcast": "255.255.255.255",
+      "netmask": "0.0.0.0",
+      "wildcard": "255.255.255.255",
+      "first_host": "0.0.0.1",
+      "last_host": "255.255.255.254",
+      "host_count": 4294967294,
+      "total_addresses": 4294967296,
+      "network_cidr": "0.0.0.0/0",
+      "is_network_address": false,
+      "contains": null
+    },
+    "match": "equal"
+  },
+  {
+    "name": "slash-31 point to point keeps both hosts",
+    "input": { "address": "10.0.0.1/31", "contains": "10.0.0.0" },
+    "expect": {
+      "valid": true,
+      "address": "10.0.0.1",
+      "prefix": 31,
+      "integer": 167772161,
+      "octets": [10, 0, 0, 1],
+      "network": "10.0.0.0",
+      "broadcast": "10.0.0.1",
+      "netmask": "255.255.255.254",
+      "wildcard": "0.0.0.1",
+      "first_host": "10.0.0.0",
+      "last_host": "10.0.0.1",
+      "host_count": 2,
+      "total_addresses": 2,
+      "network_cidr": "10.0.0.0/31",
+      "is_network_address": false,
+      "contains": true
+    },
+    "match": "equal"
+  },
+  {
+    "name": "address just past the broadcast is outside",
+    "input": { "address": "192.168.1.0/24", "contains": "192.168.2.0" },
+    "expect": {
+      "valid": true,
+      "address": "192.168.1.0",
+      "prefix": 24,
+      "integer": 3232235776,
+      "octets": [192, 168, 1, 0],
+      "network": "192.168.1.0",
+      "broadcast": "192.168.1.255",
+      "netmask": "255.255.255.0",
+      "wildcard": "0.0.0.255",
+      "first_host": "192.168.1.1",
+      "last_host": "192.168.1.254",
+      "host_count": 254,
+      "total_addresses": 256,
+      "network_cidr": "192.168.1.0/24",
+      "is_network_address": true,
+      "contains": false
+    },
+    "match": "equal"
+  },
+  {
+    "name": "short address is invalid",
+    "input": { "address": "127.0.0" },
+    "expect": {
+      "valid": false,
+      "error": "invalid_address",
+      "message": "Invalid IPv4 address."
+    },
+    "match": "equal"
+  },
+  {
+    "name": "leading zero octet is rejected",
+    "input": { "address": "192.168.001.1" },
+    "expect": {
+      "valid": false,
+      "error": "invalid_address",
+      "message": "IPv4 addresses can't have leading zeroes."
+    },
+    "match": "equal"
+  },
+  {
+    "name": "non-contiguous mask is rejected",
+    "input": { "address": "192.168.1.1", "mask": "255.0.255.0" },
+    "expect": {
+      "valid": false,
+      "error": "invalid_mask",
+      "message": "Invalid subnet mask."
+    },
+    "match": "equal"
+  }
+]
