@@ -1,0 +1,85 @@
+[
+  {
+    "name": "MCMXCIV to 1994 with breakdown",
+    "input": { "value": "MCMXCIV" },
+    "expect": {
+      "valid": true,
+      "direction": "roman-to-decimal",
+      "roman": "MCMXCIV",
+      "decimal": 1994,
+      "breakdown": [
+        { "symbol": "M", "value": 1000 },
+        { "symbol": "CM", "value": 900 },
+        { "symbol": "XC", "value": 90 },
+        { "symbol": "IV", "value": 4 }
+      ]
+    },
+    "match": "equal"
+  },
+  {
+    "name": "3999 to MMMCMXCIX",
+    "input": { "value": 3999 },
+    "expect": { "valid": true, "direction": "decimal-to-roman", "roman": "MMMCMXCIX", "decimal": 3999 },
+    "match": "contains"
+  },
+  {
+    "name": "CDXLIV to 444",
+    "input": { "value": "CDXLIV" },
+    "expect": { "valid": true, "decimal": 444 },
+    "match": "contains"
+  },
+  {
+    "name": "lowercase with whitespace mmxxiii to 2023",
+    "input": { "value": "  mmxxiii " },
+    "expect": { "valid": true, "roman": "MMXXIII", "decimal": 2023 },
+    "match": "contains"
+  },
+  {
+    "name": "digit string 153 to CLIII",
+    "input": { "value": "153" },
+    "expect": { "valid": true, "roman": "CLIII", "decimal": 153 },
+    "match": "contains"
+  },
+  {
+    "name": "zero is rejected",
+    "input": { "value": 0 },
+    "expect": { "valid": false, "error": "NOT_POSITIVE_INTEGER", "message": "requires an unsigned integer" },
+    "match": "equal"
+  },
+  {
+    "name": "4000 is out of range",
+    "input": { "value": 4000 },
+    "expect": { "valid": false, "error": "OUT_OF_RANGE" },
+    "match": "contains"
+  },
+  {
+    "name": "IIII is non-canonical, suggests IV",
+    "input": { "value": "IIII" },
+    "expect": { "valid": false, "error": "NON_CANONICAL", "suggestion": "IV" },
+    "match": "contains"
+  },
+  {
+    "name": "IC is invalid subtractive, suggests XCIX",
+    "input": { "value": "IC" },
+    "expect": { "valid": false, "error": "NON_CANONICAL", "suggestion": "XCIX" },
+    "match": "contains"
+  },
+  {
+    "name": "IIV is rejected (gap in original blacklist)",
+    "input": { "value": "IIV" },
+    "expect": { "valid": false, "error": "NON_CANONICAL", "suggestion": "V" },
+    "match": "contains"
+  },
+  {
+    "name": "CIVIL has invalid structure",
+    "input": { "value": "CIVIL" },
+    "expect": { "valid": false, "error": "NON_CANONICAL" },
+    "match": "contains"
+  },
+  {
+    "name": "invalid character Q",
+    "input": { "value": "MXQ" },
+    "expect": { "valid": false, "error": "INVALID_CHARACTER" },
+    "match": "contains"
+  }
+]

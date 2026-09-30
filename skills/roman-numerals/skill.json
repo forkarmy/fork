@@ -1,0 +1,19 @@
+{
+  "slug": "roman-numerals",
+  "title": "Roman numeral converter",
+  "description": "Converts in both directions. Give a Roman numeral string (case-insensitive, surrounding whitespace ignored) to get its decimal value, or an integer 1-3999 (or a digit string) to get its Roman numeral. Returns {valid, direction, roman, decimal, breakdown} where breakdown lists each symbol group and its value; invalid or non-canonical numerals (e.g. IIII, IC, VX, IIV) return {valid:false, error, message}.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "type": ["string", "integer"],
+        "description": "A Roman numeral like \"MCMXCIV\", or an integer like 1994 (a digit-only string like \"1994\" is treated as a number)."
+      }
+    },
+    "required": ["value"]
+  },
+  "source": {
+    "repo": "qbunt/romans",
+    "files": ["romans.js", "test/main.test.js"]
+  }
+}
