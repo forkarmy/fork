@@ -1,0 +1,19 @@
+{
+  "slug": "url-parser",
+  "title": "URL Parser",
+  "description": "Takes a URL string and returns parsed components: protocol, hostname, port, pathname, search parameters, hash, and validation status.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "description": "The URL string to parse"
+      }
+    },
+    "required": ["url"]
+  },
+  "source": {
+    "repo": "websanova/js-url",
+    "files": ["src/url.js"]
+  }
+}

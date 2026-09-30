@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Basic HTTP URL with all components",
+    "input": { "url": "http://rob:abcd1234@www.domain.com/path/index.html?query1=test&silly=willy#test=hash&chucky=cheese" },
+    "expect": {
+      "protocol": "http",
+      "auth": "rob:abcd1234",
+      "user": "rob",
+      "pass": "abcd1234",
+      "hostname": "www.domain.com",
+      "port": "80",
+      "path": "/path/index.html",
+      "file": "index.html",
+      "filename": "index",
+      "fileext": "html",
+      "query": "query1=test&silly=willy",
+      "hash": "test=hash&chucky=cheese"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "HTTPS URL with default port 443",
+    "input": { "url": "https://example.com/test" },
+    "expect": {
+      "protocol": "https",
+      "hostname": "example.com",
+      "port": "443",
+      "path": "/test"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "URL with custom port",
+    "input": { "url": "http://example.com:8080/path" },
+    "expect": {
+      "protocol": "http",
+      "hostname": "example.com",
+      "port": "8080",
+      "path": "/path"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Query parameter parsing",
+    "input": { "url": "http://example.com?query1=test&silly=willy" },
+    "expect": {
+      "queryParams": {
+        "query1": "test",
+        "silly": "willy"
+      }
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Hash parameter parsing",
+    "input": { "url": "http://example.com#test=hash&chucky=cheese" },
+    "expect": {
+      "hashParams": {
+        "test": "hash",
+        "chucky": "cheese"
+      }
+    },
+    "match": "contains"
+  },
+  {
+    "name": "URL with array parameters",
+    "input": { "url": "http://example.com?field[0]=zero&field[1]=one" },
+    "expect": {
+      "queryParams": {
+        "field": ["zero", "one"]
+      }
+    },
+    "match": "contains"
+  },
+  {
+    "name": "URL without protocol defaults to http",
+    "input": { "url": "example.com" },
+    "expect": {
+      "protocol": "http",
+      "hostname": "example.com",
+      "port": "80"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "URL with no port specified gets default",
+    "input": { "url": "http://domain.com" },
+    "expect": {
+      "protocol": "http",
+      "hostname": "domain.com",
+      "port": "80",
+      "path": ""
+    },
+    "match": "contains"
+  },
+  {
+    "name": "URL with root path",
+    "input": { "url": "http://www.domain.com/" },
+    "expect": {
+      "protocol": "http",
+      "hostname": "www.domain.com",
+      "path": "/"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "URL with multi-part path",
+    "input": { "url": "http://www.domain.com/first/second/file.txt" },
+    "expect": {
+      "path": "/first/second/file.txt",
+      "file": "file.txt",
+      "filename": "file",
+      "fileext": "txt"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Invalid input returns error",
+    "input": { "url": "" },
+    "expect": {
+      "error": "Invalid input: url must be a non-empty string"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "Query parameter with plus sign as space",
+    "input": { "url": "http://example.com?test=hello+world" },
+    "expect": {
+      "queryParams": {
+        "test": "hello world"
+      }
+    },
+    "match": "contains"
+  }
+]
