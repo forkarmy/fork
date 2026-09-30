@@ -1,0 +1,16 @@
+{
+  "slug": "encoded-polyline",
+  "title": "Encoded Polyline Tools",
+  "description": "Encode latitude/longitude pairs or decode Google-style encoded polylines. Coordinates are [latitude, longitude], bounded to [-90,90] and [-180,180]. Precision defaults to 5 and supports 0–10 decimal places; encoding rounds ties away from zero. At most 10000 points and 200000 encoded characters. Empty routes are allowed. Invalid inputs return valid:false with error and message; incomplete and overlong varints are rejected. Precision is not embedded in the string and must match when decoding.",
+  "input": {
+    "type": "object",
+    "required": ["operation"],
+    "properties": {
+      "operation": {"enum": ["encode", "decode"]},
+      "precision": {"type": "integer", "minimum": 0, "maximum": 10, "default": 5},
+      "coordinates": {"type": "array", "maxItems": 10000, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}},
+      "polyline": {"type": "string", "maxLength": 200000}
+    }
+  },
+  "source": {"repo": "mapbox/polyline", "files": ["src/polyline.js", "test/polyline.test.js"]}
+}

@@ -1,0 +1,14 @@
+[
+ {"name":"Google reference encode","input":{"operation":"encode","coordinates":[[38.5,-120.2],[40.7,-120.95],[43.252,-126.453]]},"expect":{"valid":true,"precision":5,"polyline":"_p~iF~ps|U_ulLnnqC_mqNvxq`@","pointCount":3},"match":"equal"},
+ {"name":"Google reference decode","input":{"operation":"decode","polyline":"_p~iF~ps|U_ulLnnqC_mqNvxq`@"},"expect":{"valid":true,"precision":5,"coordinates":[[38.5,-120.2],[40.7,-120.95],[43.252,-126.453]],"pointCount":3},"match":"equal"},
+ {"name":"Upstream precision six","input":{"operation":"decode","precision":6,"polyline":"_izlhA~rlgdF_{geC~ywl@_kwzCn`{nI"},"expect":{"valid":true,"precision":6,"coordinates":[[38.5,-120.2],[40.7,-120.95],[43.252,-126.453]],"pointCount":3},"match":"equal"},
+ {"name":"Upstream precision zero","input":{"operation":"encode","precision":0,"coordinates":[[38.5,-120.2],[40.7,-120.95],[43.252,-126.453]]},"expect":{"valid":true,"precision":0,"polyline":"mAnFC@CH","pointCount":3},"match":"equal"},
+ {"name":"Upstream rounding deltas","input":{"operation":"encode","coordinates":[[0,0.000006],[0,0.000002]]},"expect":{"valid":true,"precision":5,"polyline":"?A?@","pointCount":2},"match":"equal"},
+ {"name":"Upstream negative rounding","input":{"operation":"encode","coordinates":[[36.05322,-112.084004],[36.053573,-112.083914],[36.053845,-112.083965]]},"expect":{"valid":true,"precision":5,"polyline":"ss`{E~kbkTeAQw@J","pointCount":3},"match":"equal"},
+ {"name":"Empty encode","input":{"operation":"encode","coordinates":[]},"expect":{"valid":true,"precision":5,"polyline":"","pointCount":0},"match":"equal"},
+ {"name":"Empty decode","input":{"operation":"decode","polyline":""},"expect":{"valid":true,"precision":5,"coordinates":[],"pointCount":0},"match":"equal"},
+ {"name":"Truncated pair","input":{"operation":"decode","polyline":"?"},"expect":{"valid":false,"error":"POLYLINE","message":"Truncated coordinate value."},"match":"equal"},
+ {"name":"Invalid character","input":{"operation":"decode","polyline":"!a"},"expect":{"valid":false,"error":"POLYLINE","message":"Polyline characters must be ASCII 63 through 126."},"match":"equal"},
+ {"name":"Noncanonical varint","input":{"operation":"decode","polyline":"_??"},"expect":{"valid":false,"error":"POLYLINE","message":"Noncanonical overlong coordinate value."},"match":"equal"},
+ {"name":"Out of bounds","input":{"operation":"encode","coordinates":[[91,0]]},"expect":{"valid":false,"error":"COORDINATES","message":"Each coordinate must be a finite [latitude, longitude] pair within geographic bounds."},"match":"equal"}
+]

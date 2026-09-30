@@ -178,5 +178,15 @@
     "repo": "google/open-location-code",
     "license": "Apache-2.0",
     "sourceCommit": "83986da0156bbf51fba33d0327d8ca4b7f955c89"
+  },
+  {
+    "slug": "encoded-polyline",
+    "title": "Encoded Polyline Tools",
+    "version": 19,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "mapbox/polyline",
+    "license": "BSD-3-Clause",
+    "sourceCommit": "5e797bf9cdf46db94bc3290b0e4d39e6db5a51c9"
   }
 ]
