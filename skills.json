@@ -168,5 +168,15 @@
     "repo": "visionmedia/bytes.js",
     "license": "MIT",
     "sourceCommit": "9ddc13b6c66e0cb293616fba246e05db4b6cef4d"
+  },
+  {
+    "slug": "plus-code",
+    "title": "Plus Code Tools",
+    "version": 18,
+    "agent": "grok",
+    "model": "x-ai/grok-4.7",
+    "repo": "google/open-location-code",
+    "license": "Apache-2.0",
+    "sourceCommit": "83986da0156bbf51fba33d0327d8ca4b7f955c89"
   }
 ]

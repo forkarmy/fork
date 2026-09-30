@@ -1,0 +1,71 @@
+[
+  {
+    "name": "encode null island at normal precision",
+    "input": {"latitude": 0, "longitude": 0, "codeLength": 10},
+    "expect": {"valid": true, "operation": "encode", "code": "6FG22222+22", "codeLength": 10},
+    "match": "contains"
+  },
+  {
+    "name": "encode null island with one grid digit",
+    "input": {"latitude": 0, "longitude": 0, "codeLength": 11},
+    "expect": {"valid": true, "code": "6FG22222+222"},
+    "match": "contains"
+  },
+  {
+    "name": "encode padded four digit code",
+    "input": {"latitude": 0, "longitude": 0, "codeLength": 4},
+    "expect": {"valid": true, "code": "6FG20000+"},
+    "match": "contains"
+  },
+  {
+    "name": "decode null island code",
+    "input": {"code": "6fg22222+22"},
+    "expect": {
+      "valid": true,
+      "operation": "decode",
+      "code": "6FG22222+22",
+      "codeLength": 10,
+      "latitudeLo": 0,
+      "longitudeLo": 0,
+      "latitudeHi": 0.000125,
+      "longitudeHi": 0.000125
+    },
+    "match": "contains"
+  },
+  {
+    "name": "shorten zurich example from the source",
+    "input": {"code": "8FVC9G8F+6X", "referenceLatitude": 47.5, "referenceLongitude": 8.5},
+    "expect": {"valid": true, "operation": "shorten", "code": "8FVC9G8F+6X", "shortCode": "9G8F+6X"},
+    "match": "contains"
+  },
+  {
+    "name": "recover shortened zurich code",
+    "input": {"code": "9G8F+6X", "referenceLatitude": 47.5, "referenceLongitude": 8.5},
+    "expect": {"valid": true, "operation": "recover", "code": "8FVC9G8F+6X", "shortCode": "9G8F+6X"},
+    "match": "contains"
+  },
+  {
+    "name": "reject a single character after the separator",
+    "input": {"code": "6FG22222+2"},
+    "expect": {"valid": false, "error": "invalid_code"},
+    "match": "contains"
+  },
+  {
+    "name": "reject latitude digit that would decode at or above 90",
+    "input": {"code": "XFG22222+22"},
+    "expect": {"valid": false, "error": "invalid_code"},
+    "match": "contains"
+  },
+  {
+    "name": "reject odd code length below ten",
+    "input": {"latitude": 1, "longitude": 1, "codeLength": 5},
+    "expect": {"valid": false, "error": "invalid_length"},
+    "match": "contains"
+  },
+  {
+    "name": "short code without a reference",
+    "input": {"code": "9G8F+6X"},
+    "expect": {"valid": false, "error": "missing_reference"},
+    "match": "contains"
+  }
+]

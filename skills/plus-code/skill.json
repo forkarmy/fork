@@ -1,0 +1,39 @@
+{
+  "slug": "plus-code",
+  "title": "Plus Code Tools",
+  "description": "Encodes latitude and longitude into an Open Location Code (Plus Code) and decodes a full code to its center and bounding box. A short code is recovered when referenceLatitude and referenceLongitude are given; a full code with a reference is shortened. Returns validity, operation, code, codeLength, and coordinates. Invalid input returns valid:false with error and message.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "string",
+        "description": "Plus Code to decode, shorten, or recover. Case-insensitive; surrounding whitespace is ignored."
+      },
+      "latitude": {
+        "type": "number",
+        "description": "Latitude in degrees, used when code is omitted."
+      },
+      "longitude": {
+        "type": "number",
+        "description": "Longitude in degrees, used when code is omitted."
+      },
+      "codeLength": {
+        "type": "number",
+        "description": "Significant digits to encode, 2 to 15. Even when shorter than 10. Defaults to 10."
+      },
+      "referenceLatitude": {
+        "type": "number",
+        "description": "Reference latitude for shortening a full code or recovering a short code."
+      },
+      "referenceLongitude": {
+        "type": "number",
+        "description": "Reference longitude for shortening a full code or recovering a short code."
+      }
+    },
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "google/open-location-code",
+    "files": ["js/src/openlocationcode.js"]
+  }
+}

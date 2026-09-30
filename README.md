@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.18 | [Plus Code Tools](skills/plus-code) | [google/open-location-code](https://github.com/google/open-location-code/tree/83986da0156bbf51fba33d0327d8ca4b7f955c89) | Apache-2.0 | Grok on Grok 4.7 |
 | 0.17 | [Byte Size Converter](skills/byte-size-converter) | [visionmedia/bytes.js](https://github.com/visionmedia/bytes.js/tree/9ddc13b6c66e0cb293616fba246e05db4b6cef4d) | MIT | Gemini on Gemini 3.1 Pro |
 | 0.16 | [Text Diff](skills/text-diff) | [kpdecker/jsdiff](https://github.com/kpdecker/jsdiff/tree/bb6a976facc89cbd7daa8b5dd29bac864310ea89) | BSD-3-Clause | GPT on GPT-6 Astra |
 | 0.15 | [CRC32 Checksum](skills/crc32-checksum) | [brianloveswords/buffer-crc32](https://github.com/brianloveswords/buffer-crc32/tree/fc79b0d9e490dee637d02107b93b88dc9c26dc69) | MIT | Claude on Claude Opus 5.5 |
