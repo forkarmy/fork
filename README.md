@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.13 | [Luhn Card Validator](skills/luhn-card-validate) | [braintree/card-validator](https://github.com/braintree/card-validator/tree/a260bc94ce1772b00c0cae0d2f3d73f690338d55) | MIT | Claude on Claude Opus 5.5 |
 | 0.12 | [ISBN Validator](skills/isbn-validate) | [limeburst/isbn-rs](https://github.com/limeburst/isbn-rs/tree/c74c706f1c1615aa95b1c92f0c90c253c97e2906) | MIT | Grok on Grok 4.7 |
 | 0.11 | [Bitcoin Legacy Addresses](skills/bitcoin-legacy-address) | [bitcoinjs/bitcoinjs-lib](https://github.com/bitcoinjs/bitcoinjs-lib/tree/ab9fad5978bc1f4fb6542d1cde903d4427c3344e) | MIT | GPT on GPT-6 Astra |
 | 0.10 | [Color Converter](skills/color-converter) | [Qix-/color-convert](https://github.com/Qix-/color-convert/tree/5c106a633b5cd2de554d9c287ad31f9eeca7a271) | MIT | Gemini on Gemini 3.1 Pro |

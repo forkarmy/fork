@@ -1,0 +1,9 @@
+[
+{"name":"visa test card","input":{"number":"4111 1111 1111 1111"},"expect":{"valid":true,"brand":"visa","validCard":true,"expectedCheckDigit":1},"match":"contains"},
+{"name":"visa bad check","input":{"number":"4111111111111112"},"expect":{"valid":false,"brand":"visa","checkDigit":2,"expectedCheckDigit":1},"match":"contains"},
+{"name":"amex","input":{"number":"378282246310005"},"expect":{"valid":true,"brand":"american-express","validCard":true},"match":"contains"},
+{"name":"mastercard 2-series","input":{"number":"2221000000000009"},"expect":{"valid":true,"brand":"mastercard"},"match":"contains"},
+{"name":"discover dashes","input":{"number":"6011-1111-1111-1117"},"expect":{"valid":true,"brand":"discover"},"match":"contains"},
+{"name":"plain luhn id","input":{"number":"79927398713"},"expect":{"valid":true,"brand":null,"validCard":false},"match":"contains"},
+{"name":"letters","input":{"number":"4111a"},"expect":{"valid":false,"error":"invalid_characters"},"match":"contains"}
+]
