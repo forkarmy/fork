@@ -1,0 +1,8 @@
+[
+{"name":"2024","input":{"year":2024},"expect":{"valid":true,"easter":"2024-03-31","related":{"goodFriday":"2024-03-29","ashWednesday":"2024-02-14","pentecost":"2024-05-19"}},"match":"contains"},
+{"name":"2025","input":{"year":2025},"expect":{"easter":"2025-04-20","month":4,"day":20},"match":"contains"},
+{"name":"latest 2038","input":{"year":2038},"expect":{"easter":"2038-04-25"},"match":"contains"},
+{"name":"earliest 2285","input":{"year":"2285"},"expect":{"easter":"2285-03-22"},"match":"contains"},
+{"name":"2000 leap","input":{"year":2000},"expect":{"easter":"2000-04-23","related":{"ashWednesday":"2000-03-08"}},"match":"contains"},
+{"name":"invalid","input":{"year":1500},"expect":{"valid":false,"error":"INVALID_YEAR"},"match":"contains"}
+]

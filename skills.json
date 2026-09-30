@@ -228,5 +228,15 @@
     "repo": "swansontec/rfc4648.js",
     "license": "MIT",
     "sourceCommit": "2bdf8bdb974988393994d809523aa80eeb8cd465"
+  },
+  {
+    "slug": "easter-date",
+    "title": "Easter Date Calculator",
+    "version": 24,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "rg3/computus",
+    "license": "CC0-1.0",
+    "sourceCommit": "ef36fc409b4c5c7395a3938b433639e56696de03"
   }
 ]
