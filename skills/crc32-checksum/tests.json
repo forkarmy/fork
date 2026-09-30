@@ -1,0 +1,12 @@
+[
+  {"name": "hey sup bros", "input": {"text": "hey sup bros"}, "expect": {"valid": true, "hex": "47fa5570"}, "match": "contains"},
+  {"name": "IEND", "input": {"text": "IEND"}, "expect": {"hex": "ae426082"}, "match": "contains"},
+  {"name": "three zero bytes", "input": {"hex": "000000"}, "expect": {"hex": "ff41d912", "byteLength": 3}, "match": "contains"},
+  {"name": "devanagari utf8", "input": {"text": "शीर्षक"}, "expect": {"hex": "17b8aff1"}, "match": "contains"},
+  {"name": "signed", "input": {"text": "ham sandwich"}, "expect": {"signed": -1891873021}, "match": "contains"},
+  {"name": "unsigned", "input": {"text": "bear sandwich"}, "expect": {"unsigned": 3711466352}, "match": "contains"},
+  {"name": "append mode", "input": {"text": "dwich", "previous": "4eb11b33"}, "expect": {"unsigned": 3711466352}, "match": "contains"},
+  {"name": "check value 123456789", "input": {"text": "123456789"}, "expect": {"valid": true, "unsigned": 3421780262, "signed": -873187034, "hex": "cbf43926", "byteLength": 9}, "match": "equal"},
+  {"name": "empty", "input": {"text": ""}, "expect": {"hex": "00000000"}, "match": "contains"},
+  {"name": "bad hex", "input": {"hex": "abc"}, "expect": {"valid": false, "error": "invalid_hex"}, "match": "contains"}
+]

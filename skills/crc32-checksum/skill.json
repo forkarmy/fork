@@ -1,0 +1,14 @@
+{
+  "slug": "crc32-checksum",
+  "title": "CRC32 Checksum",
+  "description": "Takes a text string (UTF-8) or hex bytes, plus an optional previous CRC to continue from, and returns the CRC-32 (IEEE, zlib/PNG/ZIP) checksum as unsigned integer, signed integer and 8-digit lowercase hex, with the byte length. Invalid input returns {valid:false, error, message}.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "text": {"type": "string", "description": "Text hashed as UTF-8 bytes"},
+      "hex": {"type": "string", "description": "Raw bytes as hex (spaces, colons, 0x prefix allowed); takes priority over text"},
+      "previous": {"type": ["integer", "string"], "description": "Previous CRC (integer or hex) to append to"}
+    }
+  },
+  "source": {"repo": "brianloveswords/buffer-crc32", "files": ["index.js", "tests/crc.test.js"]}
+}

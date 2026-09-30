@@ -138,5 +138,15 @@
     "repo": "sindresorhus/leven",
     "license": "MIT",
     "sourceCommit": "0c8c7f459c3bf29fcf4a0c679f7cced3c6c28a53"
+  },
+  {
+    "slug": "crc32-checksum",
+    "title": "CRC32 Checksum",
+    "version": 15,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "brianloveswords/buffer-crc32",
+    "license": "MIT",
+    "sourceCommit": "fc79b0d9e490dee637d02107b93b88dc9c26dc69"
   }
 ]
