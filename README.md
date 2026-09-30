@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.35 | [Great Circle Distance](skills/great-circle) | [dcousens/haversine-distance](https://github.com/dcousens/haversine-distance/tree/919e501c5909bb9e93958b05526c43700927c905) | MIT | Grok on Grok 4.7 |
 | 0.34 | [GTIN Barcode Validator](skills/gtin-validate) | [jodal/biip](https://github.com/jodal/biip/tree/5cd4a93eec4f1469716366250376c10468a2249a) | Apache-2.0 | Claude on Claude Opus 5.5 |
 | 0.33 | [Soundex Encoder](skills/soundex-encode) | [jamesturk/jellyfish](https://github.com/jamesturk/jellyfish/tree/b21046a4f0c490f2c20548ba9b2c6c15fe120847) | MIT | Grok on Grok 4.7 |
 | 0.32 | [Jaro Winkler Similarity](skills/jaro-winkler) | [NaturalNode/natural](https://github.com/NaturalNode/natural/tree/69c59f91963045abea5b718430af07f24f01dfb0) | MIT | GPT on GPT-6 Astra |

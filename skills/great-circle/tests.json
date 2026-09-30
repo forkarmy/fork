@@ -1,0 +1,95 @@
+[
+  {
+    "name": "london to kisumu rounded meters",
+    "input": {
+      "from": { "latitude": 51.5072, "longitude": 0 },
+      "to": { "latitude": 0, "longitude": 34.768 }
+    },
+    "expect": { "valid": true, "roundedMeters": 6595666, "unit": "m" },
+    "match": "contains"
+  },
+  {
+    "name": "melbourne to sydney latitude longitude",
+    "input": {
+      "from": { "latitude": 37.8136, "longitude": 144.9631 },
+      "to": { "latitude": 33.865, "longitude": 151.2094 }
+    },
+    "expect": { "valid": true, "roundedMeters": 714504, "unit": "m" },
+    "match": "contains"
+  },
+  {
+    "name": "lat lng aliases",
+    "input": {
+      "from": { "lat": 37.8136, "lng": 144.9631 },
+      "to": { "lat": 33.865, "lng": 151.2094 }
+    },
+    "expect": { "valid": true, "roundedMeters": 714504 },
+    "match": "contains"
+  },
+  {
+    "name": "geojson longitude latitude arrays",
+    "input": {
+      "from": [144.9631, 37.8136],
+      "to": [151.2094, 33.865]
+    },
+    "expect": { "valid": true, "roundedMeters": 714504 },
+    "match": "contains"
+  },
+  {
+    "name": "melbourne to geelong",
+    "input": {
+      "from": { "lat": -37.81625, "lon": 144.964029 },
+      "to": { "lat": -38.149331, "lon": 144.359815 }
+    },
+    "expect": { "valid": true, "roundedMeters": 64694 },
+    "match": "contains"
+  },
+  {
+    "name": "melbourne to greenland",
+    "input": {
+      "from": { "lat": -37.81625, "lon": 144.96403 },
+      "to": { "lat": 73.45, "lon": -42.53 }
+    },
+    "expect": { "valid": true, "roundedMeters": 16049783 },
+    "match": "contains"
+  },
+  {
+    "name": "same point is zero",
+    "input": {
+      "from": { "lat": 40.0, "lon": -74.0 },
+      "to": { "latitude": 40.0, "longitude": -74.0 },
+      "unit": "km"
+    },
+    "expect": { "valid": true, "meters": 0, "distance": 0, "roundedMeters": 0, "unit": "km" },
+    "match": "equal"
+  },
+  {
+    "name": "kilometers from one degree latitude",
+    "input": {
+      "from": { "lat": 0, "lon": 0 },
+      "to": { "lat": 1, "lon": 0 },
+      "unit": "KM"
+    },
+    "expect": { "valid": true, "unit": "km", "roundedMeters": 111319 },
+    "match": "contains"
+  },
+  {
+    "name": "rejects latitude out of range",
+    "input": {
+      "from": { "lat": 91, "lon": 0 },
+      "to": { "lat": 0, "lon": 0 }
+    },
+    "expect": { "valid": false, "error": "invalid-latitude" },
+    "match": "contains"
+  },
+  {
+    "name": "rejects unknown unit",
+    "input": {
+      "from": { "lat": 0, "lon": 0 },
+      "to": { "lat": 1, "lon": 1 },
+      "unit": "yards"
+    },
+    "expect": { "valid": false, "error": "invalid-unit" },
+    "match": "contains"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "slug": "great-circle",
+  "title": "Great Circle Distance",
+  "description": "Computes the haversine great-circle distance between two WGS84 points using equatorial radius 6378137 m. Takes from and to as {latitude, longitude}, {lat, lon|lng}, or GeoJSON [longitude, latitude], plus optional unit m, km, mi, nmi, or ft (default m). Returns valid, meters, roundedMeters, distance in the requested unit, and unit. Invalid coordinates return valid:false with error and message.",
+  "input": {
+    "type": "object",
+    "required": ["from", "to"],
+    "properties": {
+      "from": {
+        "description": "Start point: {latitude, longitude}, {lat, lon|lng}, or [longitude, latitude]."
+      },
+      "to": {
+        "description": "End point, same forms as from."
+      },
+      "unit": {
+        "type": "string",
+        "description": "m (default), km, mi, nmi, or ft. Case-insensitive."
+      }
+    },
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "dcousens/haversine-distance",
+    "files": ["index.js", "test/fixtures.json"]
+  }
+}

@@ -338,5 +338,15 @@
     "repo": "jodal/biip",
     "license": "Apache-2.0",
     "sourceCommit": "5cd4a93eec4f1469716366250376c10468a2249a"
+  },
+  {
+    "slug": "great-circle",
+    "title": "Great Circle Distance",
+    "version": 35,
+    "agent": "grok",
+    "model": "x-ai/grok-4.7",
+    "repo": "dcousens/haversine-distance",
+    "license": "MIT",
+    "sourceCommit": "919e501c5909bb9e93958b05526c43700927c905"
   }
 ]
