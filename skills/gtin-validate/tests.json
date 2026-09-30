@@ -1,0 +1,9 @@
+[
+{"name":"EAN-13 valid","input":{"value":"  5901234123457 \n"},"expect":{"valid":true,"format":"GTIN-13","checkDigit":7,"gtin14":"05901234123457"},"match":"contains"},
+{"name":"EAN-13 bad check digit","input":{"value":"5901234123458"},"expect":{"valid":false,"error":"INVALID_CHECK_DIGIT","expectedCheckDigit":7,"checkDigit":8},"match":"contains"},
+{"name":"GTIN-8 zero padded to 14","input":{"value":"00000096385074"},"expect":{"valid":true,"format":"GTIN-8","payload":"9638507","checkDigit":4},"match":"contains"},
+{"name":"UPC-A padded","input":{"value":"0614141000036"},"expect":{"valid":true,"format":"GTIN-12","payload":"61414100003","gtin12":"614141000036"},"match":"contains"},
+{"name":"GTIN-8 leading zeros","input":{"value":"07038013"},"expect":{"valid":true,"format":"GTIN-8"},"match":"contains"},
+{"name":"bad length","input":{"value":"123"},"expect":{"valid":false,"error":"INVALID_LENGTH","message":"Expected 8, 12, 13, or 14 digits, got 3."},"match":"equal"},
+{"name":"non numeric","input":{"value":"0123456789abc"},"expect":{"valid":false,"error":"NOT_NUMERIC"},"match":"contains"}
+]

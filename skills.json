@@ -328,5 +328,15 @@
     "repo": "jamesturk/jellyfish",
     "license": "MIT",
     "sourceCommit": "b21046a4f0c490f2c20548ba9b2c6c15fe120847"
+  },
+  {
+    "slug": "gtin-validate",
+    "title": "GTIN Barcode Validator",
+    "version": 34,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "jodal/biip",
+    "license": "Apache-2.0",
+    "sourceCommit": "5cd4a93eec4f1469716366250376c10468a2249a"
   }
 ]
