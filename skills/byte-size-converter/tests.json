@@ -1,0 +1,38 @@
+[
+  {
+    "name": "format bytes",
+    "input": { "value": 1024 },
+    "expect": { "valid": true, "result": "1KB" },
+    "match": "equal"
+  },
+  {
+    "name": "format MB with options",
+    "input": { "value": 1048576, "options": { "unitSeparator": " ", "decimalPlaces": 2, "fixedDecimals": true } },
+    "expect": { "valid": true, "result": "1.00 MB" },
+    "match": "equal"
+  },
+  {
+    "name": "parse KB",
+    "input": { "value": "1.5kb" },
+    "expect": { "valid": true, "result": 1536 },
+    "match": "equal"
+  },
+  {
+    "name": "parse GB with spaces",
+    "input": { "value": "1 GB" },
+    "expect": { "valid": true, "result": 1073741824 },
+    "match": "equal"
+  },
+  {
+    "name": "parse missing unit assumes bytes",
+    "input": { "value": "1024" },
+    "expect": { "valid": true, "result": 1024 },
+    "match": "equal"
+  },
+  {
+    "name": "invalid value",
+    "input": { "value": "foobar" },
+    "expect": { "valid": false, "error": "Invalid input", "message": "Could not parse or format the provided value." },
+    "match": "equal"
+  }
+]

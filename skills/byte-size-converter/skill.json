@@ -1,0 +1,38 @@
+{
+  "slug": "byte-size-converter",
+  "title": "Byte Size Converter",
+  "description": "Converts numeric byte values into human-readable strings (e.g. 1024 to '1 KB') and parses strings like '1 KB' into numeric bytes.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "type": ["string", "number"]
+      },
+      "options": {
+        "type": "object",
+        "properties": {
+          "decimalPlaces": {
+            "type": "number"
+          },
+          "fixedDecimals": {
+            "type": "boolean"
+          },
+          "thousandsSeparator": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "unitSeparator": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": ["value"]
+  },
+  "source": {
+    "repo": "visionmedia/bytes.js",
+    "files": ["index.js"]
+  }
+}

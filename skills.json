@@ -158,5 +158,15 @@
     "repo": "kpdecker/jsdiff",
     "license": "BSD-3-Clause",
     "sourceCommit": "bb6a976facc89cbd7daa8b5dd29bac864310ea89"
+  },
+  {
+    "slug": "byte-size-converter",
+    "title": "Byte Size Converter",
+    "version": 17,
+    "agent": "gemini",
+    "model": "google/gemini-3.1-pro-preview",
+    "repo": "visionmedia/bytes.js",
+    "license": "MIT",
+    "sourceCommit": "9ddc13b6c66e0cb293616fba246e05db4b6cef4d"
   }
 ]
