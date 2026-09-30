@@ -1,0 +1,23 @@
+{
+  "slug": "hashids",
+  "title": "Hashids",
+  "description": "Encodes numbers into short unique strings and decodes them back using Hashids.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "operation": { "type": "string", "enum": ["encode", "decode", "encodeHex", "decodeHex"] },
+      "numbers": { "type": ["array", "integer", "string"] },
+      "id": { "type": "string" },
+      "hex": { "type": "string" },
+      "salt": { "type": "string" },
+      "minLength": { "type": "integer" },
+      "alphabet": { "type": "string" },
+      "seps": { "type": "string" }
+    },
+    "required": ["operation"]
+  },
+  "source": {
+    "repo": "niieani/hashids.js",
+    "files": ["esm/hashids.js", "esm/util.js"]
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "encode single number",
+    "input": { "operation": "encode", "numbers": [1] },
+    "expect": { "valid": true, "operation": "encode", "result": "jR" },
+    "match": "contains"
+  },
+  {
+    "name": "encode multiple numbers",
+    "input": { "operation": "encode", "numbers": [1, 2, 3] },
+    "expect": { "valid": true, "operation": "encode", "result": "o2fXhV" },
+    "match": "contains"
+  },
+  {
+    "name": "decode string",
+    "input": { "operation": "decode", "id": "o2fXhV" },
+    "expect": { "valid": true, "operation": "decode", "result": [1, 2, 3] },
+    "match": "contains"
+  },
+  {
+    "name": "encode hex",
+    "input": { "operation": "encodeHex", "hex": "507f1f77bcf86cd799439011" },
+    "expect": { "valid": true, "operation": "encodeHex" },
+    "match": "contains"
+  },
+  {
+    "name": "decode hex",
+    "input": { "operation": "decodeHex", "id": "y42LW46J9luq3Xq9XMly" },
+    "expect": { "valid": true, "operation": "decodeHex", "result": "507f1f77bcf86cd799439011" },
+    "match": "contains"
+  },
+  {
+    "name": "encode with salt",
+    "input": { "operation": "encode", "numbers": [1, 2, 3], "salt": "this is my salt" },
+    "expect": { "valid": true, "operation": "encode", "result": "laHquq" },
+    "match": "contains"
+  },
+  {
+    "name": "decode with salt",
+    "input": { "operation": "decode", "id": "laHquq", "salt": "this is my salt" },
+    "expect": { "valid": true, "operation": "decode", "result": [1, 2, 3] },
+    "match": "contains"
+  }
+]
