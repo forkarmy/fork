@@ -1,0 +1,14 @@
+[
+ {"name":"BitcoinJS mainnet P2PKH","input":{"address":"1BgGZ9tcN4rm9KBzDn7KprQz87SZ26SAMH"},"expect":{"valid":true,"address":"1BgGZ9tcN4rm9KBzDn7KprQz87SZ26SAMH","encoding":"base58check","network":"mainnet","possibleNetworks":["mainnet"],"type":"p2pkh","version":0,"hash":"751e76e8199196d454941c45d1b3a323f1433bd6"},"match":"equal"},
+ {"name":"BitcoinJS mainnet P2SH trimmed","input":{"address":" 3LRW7jeCvQCRdPF8S3yUCfRAx4eqXFmdcr\n"},"expect":{"valid":true,"address":"3LRW7jeCvQCRdPF8S3yUCfRAx4eqXFmdcr","encoding":"base58check","network":"mainnet","possibleNetworks":["mainnet"],"type":"p2sh","version":5,"hash":"cd7b44d0b03f2d026d1e586d7ae18903b0d385f6"},"match":"equal"},
+ {"name":"BitcoinJS testnet P2PKH","input":{"address":"mrCDrCybB6J1vRfbwM5hemdJz73FwDBC8r"},"expect":{"valid":true,"network":"testnet-family","possibleNetworks":["testnet","signet","regtest"],"type":"p2pkh","version":111,"hash":"751e76e8199196d454941c45d1b3a323f1433bd6"},"match":"contains"},
+ {"name":"BitcoinJS testnet P2SH","input":{"address":"2NByiBUaEXrhmqAsg7BbLpcQSAQs1EDwt5w"},"expect":{"valid":true,"network":"testnet-family","type":"p2sh","version":196,"hash":"cd7b44d0b03f2d026d1e586d7ae18903b0d385f6"},"match":"contains"},
+ {"name":"Leading zero bytes","input":{"address":"1111111111111111111114oLvT2"},"expect":{"valid":true,"version":0,"hash":"0000000000000000000000000000000000000000"},"match":"contains"},
+ {"name":"Single character checksum corruption","input":{"address":"1BgGZ9tcN4rm9KBzDn7KprQz87SZ26SAMJ"},"expect":{"valid":false,"error":"INVALID_CHECKSUM"},"match":"contains"},
+ {"name":"Forbidden zero character","input":{"address":"10gGZ9tcN4rm9KBzDn7KprQz87SZ26SAMH"},"expect":{"valid":false,"error":"INVALID_CHARACTER"},"match":"contains"},
+ {"name":"Source short payload fixture","input":{"address":"7SeEnXWPaCCALbVrTnszCVGfRU8cGfx"},"expect":{"valid":false,"error":"INVALID_LENGTH"},"match":"contains"},
+ {"name":"Source long payload fixture","input":{"address":"j9ywUkWg2fTQrouxxh5rSZhRvrjMkEUfuiKe"},"expect":{"valid":false,"error":"INVALID_LENGTH"},"match":"contains"},
+ {"name":"Source Litecoin version not Bitcoin","input":{"address":"MCZjFcwYJwwYqXAbd3bbnxaCVGs81cp43Z"},"expect":{"valid":false,"error":"UNSUPPORTED_VERSION"},"match":"contains"},
+ {"name":"SegWit explicitly unsupported","input":{"address":"BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4"},"expect":{"valid":false,"error":"UNSUPPORTED_FORMAT"},"match":"contains"},
+ {"name":"Non-string input","input":{"address":123},"expect":{"valid":false,"error":"INVALID_INPUT","message":"address must be a string."},"match":"equal"}
+]

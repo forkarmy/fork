@@ -98,5 +98,15 @@
     "repo": "Qix-/color-convert",
     "license": "MIT",
     "sourceCommit": "5c106a633b5cd2de554d9c287ad31f9eeca7a271"
+  },
+  {
+    "slug": "bitcoin-legacy-address",
+    "title": "Bitcoin Legacy Addresses",
+    "version": 11,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "bitcoinjs/bitcoinjs-lib",
+    "license": "MIT",
+    "sourceCommit": "ab9fad5978bc1f4fb6542d1cde903d4427c3344e"
   }
 ]

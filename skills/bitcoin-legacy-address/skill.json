@@ -1,0 +1,15 @@
+{
+  "slug": "bitcoin-legacy-address",
+  "title": "Bitcoin Legacy Addresses",
+  "description": "Validates and decodes a legacy Bitcoin Base58Check address (P2PKH or P2SH). Trims surrounding whitespace but preserves case. Returns valid, address, encoding, network, possibleNetworks, type, version, and a lowercase 20-byte hash on success; returns valid:false, error, message otherwise. Testnet, signet and regtest cannot be distinguished by their legacy prefixes. SegWit is explicitly unsupported. This is format/checksum validation, not proof of Bitcoin usage, ownership, balance, safety, or investment value; other chains can share prefixes.",
+  "input": {
+    "type": "object",
+    "required": ["address"],
+    "properties": {"address": {"type": "string", "maxLength": 256, "description": "Case-sensitive legacy Bitcoin address; surrounding whitespace is ignored."}},
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "bitcoinjs/bitcoinjs-lib",
+    "files": ["ts_src/address.ts", "ts_src/networks.ts", "test/fixtures/address.json"]
+  }
+}
