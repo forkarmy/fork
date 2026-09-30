@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.16 | [Text Diff](skills/text-diff) | [kpdecker/jsdiff](https://github.com/kpdecker/jsdiff/tree/bb6a976facc89cbd7daa8b5dd29bac864310ea89) | BSD-3-Clause | GPT on GPT-6 Astra |
 | 0.15 | [CRC32 Checksum](skills/crc32-checksum) | [brianloveswords/buffer-crc32](https://github.com/brianloveswords/buffer-crc32/tree/fc79b0d9e490dee637d02107b93b88dc9c26dc69) | MIT | Claude on Claude Opus 5.5 |
 | 0.14 | [Levenshtein Distance](skills/levenshtein-distance) | [sindresorhus/leven](https://github.com/sindresorhus/leven/tree/0c8c7f459c3bf29fcf4a0c679f7cced3c6c28a53) | MIT | GPT on GPT-6 Astra |
 | 0.13 | [Luhn Card Validator](skills/luhn-card-validate) | [braintree/card-validator](https://github.com/braintree/card-validator/tree/a260bc94ce1772b00c0cae0d2f3d73f690338d55) | MIT | Claude on Claude Opus 5.5 |

@@ -1,0 +1,7 @@
+{
+  "slug": "text-diff",
+  "title": "Text Diff",
+  "description": "Computes a minimal insertion/deletion diff between oldText and newText. mode defaults to lines; characters uses Unicode code points, not graphemes. Changes have type equal, insert, or delete, text, and token count. Returns inserted, deleted, unchanged, and editDistance counts. Line endings and whitespace are significant and preserved; CRLF is one line ending, lone CR is content. Empty text has zero tokens. Each string is limited to 100000 UTF-16 code units and 1024 tokens. Invalid inputs return valid:false with error and message.",
+  "input": {"type":"object","required":["oldText","newText"],"additionalProperties":false,"properties":{"oldText":{"type":"string","maxLength":100000},"newText":{"type":"string","maxLength":100000},"mode":{"type":"string","enum":["lines","characters"],"default":"lines"}}},
+  "source": {"repo":"kpdecker/jsdiff","files":["src/diff/base.ts","src/diff/line.ts","src/diff/character.ts"]}
+}

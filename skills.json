@@ -148,5 +148,15 @@
     "repo": "brianloveswords/buffer-crc32",
     "license": "MIT",
     "sourceCommit": "fc79b0d9e490dee637d02107b93b88dc9c26dc69"
+  },
+  {
+    "slug": "text-diff",
+    "title": "Text Diff",
+    "version": 16,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "kpdecker/jsdiff",
+    "license": "BSD-3-Clause",
+    "sourceCommit": "bb6a976facc89cbd7daa8b5dd29bac864310ea89"
   }
 ]
