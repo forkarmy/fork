@@ -1,0 +1,134 @@
+[
+	{
+		"name": "basic slugification",
+		"input": {"string": "Foo Bar"},
+		"expect": {"slug": "foo-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "multiple spaces",
+		"input": {"string": "foo bar baz"},
+		"expect": {"slug": "foo-bar-baz"},
+		"match": "equal"
+	},
+	{
+		"name": "trailing spaces",
+		"input": {"string": "foo bar "},
+		"expect": {"slug": "foo-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "leading spaces",
+		"input": {"string": "       foo bar"},
+		"expect": {"slug": "foo-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "special characters",
+		"input": {"string": "[foo] [bar]"},
+		"expect": {"slug": "foo-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "accents removed",
+		"input": {"string": "Déjà Vu!"},
+		"expect": {"slug": "deja-vu"},
+		"match": "equal"
+	},
+	{
+		"name": "camelCase",
+		"input": {"string": "FooBar"},
+		"expect": {"slug": "foo-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "camelCase with lowercase",
+		"input": {"string": "fooBar"},
+		"expect": {"slug": "foo-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "all caps",
+		"input": {"string": "UNICORNS AND RAINBOWS"},
+		"expect": {"slug": "unicorns-and-rainbows"},
+		"match": "equal"
+	},
+	{
+		"name": "ampersand replacement",
+		"input": {"string": "Foo & Bar"},
+		"expect": {"slug": "foo-and-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "mixed with numbers",
+		"input": {"string": "Foo Bar2"},
+		"expect": {"slug": "foo-bar2"},
+		"match": "equal"
+	},
+	{
+		"name": "acronym splitting",
+		"input": {"string": "APISection"},
+		"expect": {"slug": "api-section"},
+		"match": "equal"
+	},
+	{
+		"name": "possessive contraction",
+		"input": {"string": "Conway's Law"},
+		"expect": {"slug": "conways-law"},
+		"match": "equal"
+	},
+	{
+		"name": "negative contraction",
+		"input": {"string": "Don't Repeat Yourself"},
+		"expect": {"slug": "dont-repeat-yourself"},
+		"match": "equal"
+	},
+	{
+		"name": "custom separator underscore",
+		"input": {"string": "foo bar", "options": {"separator": "_"}},
+		"expect": {"slug": "foo_bar"},
+		"match": "equal"
+	},
+	{
+		"name": "custom separator empty",
+		"input": {"string": "aaa bbb", "options": {"separator": ""}},
+		"expect": {"slug": "aaabbb"},
+		"match": "equal"
+	},
+	{
+		"name": "lowercase false option",
+		"input": {"string": "foo bar", "options": {"lowercase": false}},
+		"expect": {"slug": "foo-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "lowercase false uppercase",
+		"input": {"string": "BAR&baz", "options": {"lowercase": false}},
+		"expect": {"slug": "BAR-and-baz"},
+		"match": "equal"
+	},
+	{
+		"name": "decamelize false",
+		"input": {"string": "fooBar", "options": {"decamelize": false}},
+		"expect": {"slug": "foobar"},
+		"match": "equal"
+	},
+	{
+		"name": "custom replacements",
+		"input": {"string": "foo | bar", "options": {"customReplacements": [["|", " or "]]}},
+		"expect": {"slug": "foo-or-bar"},
+		"match": "equal"
+	},
+	{
+		"name": "empty string",
+		"input": {"string": ""},
+		"expect": {"slug": ""},
+		"match": "equal"
+	},
+	{
+		"name": "only special characters",
+		"input": {"string": "!@#$%"},
+		"expect": {"slug": ""},
+		"match": "equal"
+	}
+]

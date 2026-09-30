@@ -1,0 +1,56 @@
+{
+	"slug": "slug-generator",
+	"title": "Slug Generator",
+	"description": "Takes a string and returns a URL-safe slug by converting to lowercase, removing accents, replacing spaces and special characters with hyphens, and handling camelCase splitting.",
+	"input": {
+		"type": "object",
+		"properties": {
+			"string": {
+				"type": "string",
+				"description": "The text to convert to a slug"
+			},
+			"options": {
+				"type": "object",
+				"description": "Optional configuration object",
+				"properties": {
+					"separator": {
+						"type": "string",
+						"description": "Character(s) to use as word separator (default: '-')",
+						"default": "-"
+					},
+					"lowercase": {
+						"type": "boolean",
+						"description": "Convert to lowercase (default: true)",
+						"default": true
+					},
+					"decamelize": {
+						"type": "boolean",
+						"description": "Split camelCase words (default: true)",
+						"default": true
+					},
+					"customReplacements": {
+						"type": "array",
+						"description": "Array of [find, replace] pairs for custom character replacements",
+						"items": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2
+						}
+					},
+					"preserveCharacters": {
+						"type": "array",
+						"description": "Array of characters to preserve in the slug",
+						"items": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		},
+		"required": ["string"]
+	},
+	"source": {
+		"repo": "sindresorhus/slugify",
+		"files": ["index.js", "overridable-replacements.js", "test.js"]
+	}
+}
