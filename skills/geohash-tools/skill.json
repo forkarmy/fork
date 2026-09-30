@@ -1,0 +1,21 @@
+{
+  "slug": "geohash-tools",
+  "title": "Geohash Tools",
+  "description": "Encode coordinates or decode a geohash. Returns a lowercase hash, precision, rounded center, exact SW/NE bounds, and eight neighbors. Encoding defaults to 9 characters; precision is 1–12. Decoding accepts uppercase and surrounding whitespace. Coordinates include endpoints. Neighbors use the source library's grid wrapping at the antimeridian and poles (polar wrap is not a physical continuation). Invalid inputs return valid:false and an error message.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "operation": {"enum": ["encode", "decode"]},
+      "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+      "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+      "precision": {"type": "integer", "minimum": 1, "maximum": 12, "default": 9},
+      "geohash": {"type": "string", "description": "1–12 geohash base32 characters; case insensitive, trimmed."}
+    },
+    "required": ["operation"],
+    "oneOf": [
+      {"properties": {"operation": {"const": "encode"}}, "required": ["latitude", "longitude"]},
+      {"properties": {"operation": {"const": "decode"}}, "required": ["geohash"]}
+    ]
+  },
+  "source": {"repo": "chrisveness/latlon-geohash", "files": ["latlon-geohash.js"]}
+}

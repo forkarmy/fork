@@ -1,0 +1,14 @@
+[
+ {"name":"source Jutland encode","input":{"operation":"encode","latitude":57.648,"longitude":10.410,"precision":6},"expect":{"valid":true,"geohash":"u4pruy","center":{"lat":57.648,"lon":10.410}},"match":"contains"},
+ {"name":"source Jutland decode normalized","input":{"operation":"decode","geohash":" U4PRUY "},"expect":{"valid":true,"geohash":"u4pruy","precision":6,"center":{"lat":57.648,"lon":10.410}},"match":"contains"},
+ {"name":"source Curitiba encode","input":{"operation":"encode","latitude":-25.38262,"longitude":-49.26561,"precision":8},"expect":{"geohash":"6gkzwgjz","center":{"lat":-25.38262,"lon":-49.26561}},"match":"contains"},
+ {"name":"source Curitiba decode","input":{"operation":"decode","geohash":"6gkzwgjz"},"expect":{"center":{"lat":-25.38262,"lon":-49.26561}},"match":"contains"},
+ {"name":"source boundary neighbors","input":{"operation":"decode","geohash":"ezzz"},"expect":{"neighbors":{"n":"gbpb","ne":"u000","e":"spbp","se":"spbn","s":"ezzy","sw":"ezzw","w":"ezzx","nw":"gbp8"}},"match":"contains"},
+ {"name":"source twelve character reference","input":{"operation":"encode","latitude":37.25,"longitude":123.75,"precision":12},"expect":{"geohash":"wy85bj0hbp21","precision":12},"match":"contains"},
+ {"name":"single cell exact output","input":{"operation":"encode","latitude":0,"longitude":0,"precision":1},"expect":{"valid":true,"geohash":"s","precision":1,"center":{"lat":23,"lon":23},"bounds":{"sw":{"lat":0,"lon":0},"ne":{"lat":45,"lon":45}},"neighbors":{"n":"u","ne":"v","e":"t","se":"m","s":"k","sw":"7","w":"e","nw":"g"}},"match":"equal"},
+ {"name":"default precision","input":{"operation":"encode","latitude":0,"longitude":0},"expect":{"geohash":"s00000000","precision":9},"match":"contains"},
+ {"name":"endpoint and grid wrapping","input":{"operation":"encode","latitude":90,"longitude":180,"precision":1},"expect":{"geohash":"z","bounds":{"sw":{"lat":45,"lon":135},"ne":{"lat":90,"lon":180}},"neighbors":{"n":"p","e":"b"}},"match":"contains"},
+ {"name":"invalid alphabet","input":{"operation":"decode","geohash":"u120a"},"expect":{"valid":false,"error":"INVALID_INPUT","message":"Geohash must be a string of 1–12 geohash base32 characters."},"match":"equal"},
+ {"name":"out of range latitude","input":{"operation":"encode","latitude":91,"longitude":0},"expect":{"valid":false,"error":"INVALID_INPUT","message":"Latitude must be a finite number between -90 and 90."},"match":"equal"},
+ {"name":"unbounded precision rejected","input":{"operation":"encode","latitude":0,"longitude":0,"precision":1000000},"expect":{"valid":false,"error":"INVALID_INPUT","message":"Precision must be an integer between 1 and 12."},"match":"equal"}
+]

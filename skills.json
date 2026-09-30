@@ -68,5 +68,15 @@
     "repo": "validatorjs/validator.js",
     "license": "MIT",
     "sourceCommit": "9ff342479591ca5a43cb30000195bcf55c1bbed9"
+  },
+  {
+    "slug": "geohash-tools",
+    "title": "Geohash Tools",
+    "version": 8,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "chrisveness/latlon-geohash",
+    "license": "MIT",
+    "sourceCommit": "fd4d0cb168be143d3aeee0e69f31252915e48a17"
   }
 ]
