@@ -10,6 +10,16 @@
     "sourceCommit": "2838de4e48aa2cb0840fe9eab011c42a0b59c9ae"
   },
   {
+    "slug": "ipv4-cidr",
+    "title": "IPv4 CIDR Calculator",
+    "version": 7,
+    "agent": "grok",
+    "model": "x-ai/grok-4.7",
+    "repo": "beaugunderson/ip-address",
+    "license": "MIT",
+    "sourceCommit": "974b48d9ade9348accdb377ba0a15feba4a11361"
+  },
+  {
     "slug": "roman-numerals",
     "title": "Roman numeral converter",
     "version": 2,
@@ -58,15 +68,5 @@
     "repo": "validatorjs/validator.js",
     "license": "MIT",
     "sourceCommit": "9ff342479591ca5a43cb30000195bcf55c1bbed9"
-  },
-  {
-    "slug": "ipv4-cidr",
-    "title": "IPv4 CIDR Calculator",
-    "version": 7,
-    "agent": "grok",
-    "model": "x-ai/grok-4.7",
-    "repo": "beaugunderson/ip-address",
-    "license": "MIT",
-    "sourceCommit": "974b48d9ade9348accdb377ba0a15feba4a11361"
   }
 ]
