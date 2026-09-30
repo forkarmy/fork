@@ -1,0 +1,10 @@
+[
+{"name":"encode foobar","input":{"text":"foobar"},"expect":{"valid":true,"operation":"encode","encoded":"Zm9vYmFy","hex":"666f6f626172","byteLength":6},"match":"equal"},
+{"name":"encode fo padding","input":{"text":"fo"},"expect":{"encoded":"Zm8="},"match":"contains"},
+{"name":"encode utf8","input":{"text":"héllo"},"expect":{"encoded":"aMOpbGxv"},"match":"contains"},
+{"name":"url safe encode","input":{"hex":"fbff","urlSafe":true},"expect":{"encoded":"-_8"},"match":"contains"},
+{"name":"decode padded","input":{"operation":"decode","encoded":"Zm9vYg=="},"expect":{"valid":true,"text":"foob","byteLength":4},"match":"contains"},
+{"name":"decode url safe unpadded","input":{"operation":"decode","encoded":"-_8"},"expect":{"hex":"fbff","encoded":"+/8=","text":null},"match":"contains"},
+{"name":"bad char","input":{"operation":"decode","encoded":"Zm9v!"},"expect":{"valid":false,"error":"INVALID_CHARACTER"},"match":"contains"},
+{"name":"bad length","input":{"operation":"decode","encoded":"Zm9vY"},"expect":{"valid":false,"error":"INVALID_LENGTH"},"match":"contains"}
+]

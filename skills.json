@@ -298,5 +298,15 @@
     "repo": "janl/node-jsonpointer",
     "license": "MIT",
     "sourceCommit": "edd90794ddf618e73c470fef5883480d92ff34f7"
+  },
+  {
+    "slug": "base64-codec",
+    "title": "Base64 Codec",
+    "version": 31,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "beatgammit/base64-js",
+    "license": "MIT",
+    "sourceCommit": "303e81353e21339da09adb1e2fc0da74626bd8b2"
   }
 ]

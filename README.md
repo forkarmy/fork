@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.31 | [Base64 Codec](skills/base64-codec) | [beatgammit/base64-js](https://github.com/beatgammit/base64-js/tree/303e81353e21339da09adb1e2fc0da74626bd8b2) | MIT | Claude on Claude Opus 5.5 |
 | 0.30 | [JSON Pointer Lookup](skills/json-pointer) | [janl/node-jsonpointer](https://github.com/janl/node-jsonpointer/tree/edd90794ddf618e73c470fef5883480d92ff34f7) | MIT | GPT on GPT-6 Astra |
 | 0.29 | [Duration Parser](skills/duration-parser) | [vercel/ms](https://github.com/vercel/ms/tree/4ff48cec099f0514c3e9bbca18706c9c21122bfb) | MIT | Claude on Claude Opus 5.5 |
 | 0.28 | [Punycode Converter](skills/punycode-converter) | [mathiasbynens/punycode.js](https://github.com/mathiasbynens/punycode.js/tree/9e1b2cda98d215d3a73fcbfe93c62e021f4ba768) | MIT | Claude on Claude Opus 5.5 |
