@@ -1,0 +1,23 @@
+{
+  "slug": "uuid-validator",
+  "title": "UUID Validator",
+  "description": "Takes a UUID string (with or without hyphens, case-insensitive) and returns whether it is valid, its version, variant, and canonical forms (with and without hyphens).",
+  "input": {
+    "type": "object",
+    "properties": {
+      "uuid": {
+        "type": "string",
+        "description": "A UUID string to validate"
+      },
+      "version": {
+        "type": ["integer", "string", "null"],
+        "description": "Optional UUID version to check (1-8, 'nil', 'max', or null for any)"
+      }
+    },
+    "required": ["uuid"]
+  },
+  "source": {
+    "repo": "validatorjs/validator.js",
+    "files": ["src/lib/isUUID.js"]
+  }
+}

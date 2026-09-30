@@ -1,0 +1,133 @@
+[
+  {
+    "name": "Valid UUID v4",
+    "input": {
+      "uuid": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "expect": {
+      "valid": true,
+      "version": 4,
+      "canonical": "550e8400-e29b-41d4-a716-446655440000",
+      "compact": "550e8400e29b41d4a716446655440000"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "Valid UUID v1",
+    "input": {
+      "uuid": "550e8400-e29b-11d4-a716-446655440000"
+    },
+    "expect": {
+      "valid": true,
+      "version": 1
+    },
+    "match": "contains"
+  },
+  {
+    "name": "UUID without hyphens",
+    "input": {
+      "uuid": "550e8400e29b41d4a716446655440000"
+    },
+    "expect": {
+      "valid": true,
+      "canonical": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    "match": "contains"
+  },
+  {
+    "name": "UUID with different version",
+    "input": {
+      "uuid": "550e8400-e29b-51d4-a716-446655440000",
+      "version": 5
+    },
+    "expect": {
+      "valid": true
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Invalid UUID format",
+    "input": {
+      "uuid": "not-a-uuid"
+    },
+    "expect": {
+      "valid": false,
+      "error": "Invalid UUID format"
+    },
+    "match": "equal"
+  },
+  {
+    "name": "Nil UUID",
+    "input": {
+      "uuid": "00000000-0000-0000-0000-000000000000",
+      "version": "nil"
+    },
+    "expect": {
+      "valid": true
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Max UUID",
+    "input": {
+      "uuid": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "version": "max"
+    },
+    "expect": {
+      "valid": true
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Case insensitive UUID",
+    "input": {
+      "uuid": "550E8400-E29B-41D4-A716-446655440000"
+    },
+    "expect": {
+      "valid": true
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Invalid version",
+    "input": {
+      "uuid": "550e8400-e29b-41d4-a716-446655440000",
+      "version": 2
+    },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  },
+  {
+    "name": "Too short UUID",
+    "input": {
+      "uuid": "550e8400-e29b-41d4-a716"
+    },
+    "expect": {
+      "valid": false
+    },
+    "match": "contains"
+  },
+  {
+    "name": "UUID v3",
+    "input": {
+      "uuid": "550e8400-e29b-31d4-a716-446655440000"
+    },
+    "expect": {
+      "valid": true,
+      "version": 3
+    },
+    "match": "contains"
+  },
+  {
+    "name": "UUID with whitespace",
+    "input": {
+      "uuid": "  550e8400-e29b-41d4-a716-446655440000  "
+    },
+    "expect": {
+      "valid": true
+    },
+    "match": "contains"
+  }
+]
