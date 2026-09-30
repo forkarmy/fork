@@ -308,5 +308,15 @@
     "repo": "beatgammit/base64-js",
     "license": "MIT",
     "sourceCommit": "303e81353e21339da09adb1e2fc0da74626bd8b2"
+  },
+  {
+    "slug": "jaro-winkler",
+    "title": "Jaro Winkler Similarity",
+    "version": 32,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "NaturalNode/natural",
+    "license": "MIT",
+    "sourceCommit": "69c59f91963045abea5b718430af07f24f01dfb0"
   }
 ]

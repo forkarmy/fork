@@ -1,0 +1,14 @@
+[
+{"name":"source DIXON","input":{"first":"DIXON","second":"DICKSONX"},"expect":{"valid":true,"jaro":0.766666666667,"jaroWinkler":0.813333333333,"prefixLength":2,"firstLength":5,"secondLength":8,"unit":"utf16"},"match":"equal"},
+{"name":"source DWAYNE","input":{"first":"DWAYNE","second":"DUANE"},"expect":{"jaro":0.822222222222,"jaroWinkler":0.84},"match":"contains"},
+{"name":"source transposition","input":{"first":"MARTHA","second":"MARHTA"},"expect":{"jaro":0.944444444444,"jaroWinkler":0.961111111111,"prefixLength":3},"match":"contains"},
+{"name":"source low-score prefix bonus","input":{"first":"aaa","second":"abcd"},"expect":{"jaroWinkler":0.575},"match":"contains"},
+{"name":"source mismatch","input":{"first":"NOT","second":"SAME"},"expect":{"jaro":0,"jaroWinkler":0},"match":"contains"},
+{"name":"source ignore case","input":{"first":"dixon","second":"DICKSONX","ignoreCase":true},"expect":{"jaroWinkler":0.813333333333},"match":"contains"},
+{"name":"empty identity","input":{"first":"","second":""},"expect":{"valid":true,"jaro":1,"jaroWinkler":1,"prefixLength":0,"firstLength":0,"secondLength":0,"unit":"utf16"},"match":"equal"},
+{"name":"one empty","input":{"first":"","second":"a"},"expect":{"jaro":0,"jaroWinkler":0,"prefixLength":0},"match":"contains"},
+{"name":"single letter lowercase identity","input":{"first":"A","second":"a","ignoreCase":true},"expect":{"jaro":1,"jaroWinkler":1,"prefixLength":1},"match":"contains"},
+{"name":"UTF16 identity and capped prefix","input":{"first":"😀abc","second":"😀abc"},"expect":{"jaro":1,"jaroWinkler":1,"firstLength":5,"secondLength":5,"prefixLength":4},"match":"contains"},
+{"name":"invalid type","input":{"first":123,"second":"123"},"expect":{"valid":false,"error":"INVALID_INPUT","message":"first and second must be strings."},"match":"equal"},
+{"name":"invalid option","input":{"first":"a","second":"b","ignoreCase":"true"},"expect":{"valid":false,"error":"INVALID_INPUT","message":"ignoreCase must be a boolean."},"match":"equal"}
+]
