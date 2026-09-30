@@ -1,0 +1,18 @@
+{
+  "slug": "json-pointer",
+  "title": "JSON Pointer Lookup",
+  "description": "Resolves an RFC 6901 pointer against a JSON document without mutation. Takes document (any JSON value) and pointer (string); empty pointer selects the root. Also accepts URI fragments beginning with #, percent-decoded once before parsing. Returns valid, decoded pointer, unescaped tokens, found, and value only when found. Missing paths, noncanonical array indices (including leading zeros), and array - return found:false; malformed pointers return valid:false with error and message. Only own object properties are read; arrays expose indices, not length or methods. No whitespace trimming or Unicode normalization. Maximum pointer length is 100000 UTF-16 code units.",
+  "input": {
+    "type": "object",
+    "required": ["document", "pointer"],
+    "properties": {
+      "document": {},
+      "pointer": {"type": "string", "maxLength": 100000}
+    },
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "janl/node-jsonpointer",
+    "files": ["jsonpointer.js", "test.js"]
+  }
+}

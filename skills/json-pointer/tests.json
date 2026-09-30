@@ -1,0 +1,14 @@
+[
+  {"name":"upstream nested array lookup","input":{"document":{"d":{"e":[{"a":3},{"b":4},{"c":5}]}},"pointer":"/d/e/1/b"},"expect":{"valid":true,"pointer":"/d/e/1/b","tokens":["d","e","1","b"],"found":true,"value":4},"match":"equal"},
+  {"name":"upstream slash escape","input":{"document":{"a/b":{"c":1}},"pointer":"/a~1b/c"},"expect":{"valid":true,"pointer":"/a~1b/c","tokens":["a/b","c"],"found":true,"value":1},"match":"equal"},
+  {"name":"upstream escape order","input":{"document":{"~1":3},"pointer":"/~01"},"expect":{"valid":true,"pointer":"/~01","tokens":["~1"],"found":true,"value":3},"match":"equal"},
+  {"name":"upstream empty key","input":{"document":{"":0},"pointer":"/"},"expect":{"valid":true,"pointer":"/","tokens":[""],"found":true,"value":0},"match":"equal"},
+  {"name":"null root via fragment","input":{"document":null,"pointer":"#"},"expect":{"valid":true,"pointer":"","tokens":[],"found":true,"value":null},"match":"equal"},
+  {"name":"upstream traversal past null","input":{"document":{"nullValue":null},"pointer":"/nullValue/e"},"expect":{"valid":true,"pointer":"/nullValue/e","tokens":["nullValue","e"],"found":false},"match":"equal"},
+  {"name":"upstream leading zero index rejected","input":{"document":["zero","one","two"],"pointer":"/01"},"expect":{"valid":true,"pointer":"/01","tokens":["01"],"found":false},"match":"equal"},
+  {"name":"fragment Unicode and encoded slash escape","input":{"document":{"café/a":false},"pointer":"#/caf%C3%A9~1a"},"expect":{"valid":true,"pointer":"/café~1a","tokens":["café/a"],"found":true,"value":false},"match":"equal"},
+  {"name":"prototype not JSON data","input":{"document":{},"pointer":"/constructor"},"expect":{"valid":true,"pointer":"/constructor","tokens":["constructor"],"found":false},"match":"equal"},
+  {"name":"invalid bare pointer","input":{"document":{},"pointer":"a/"},"expect":{"valid":false,"error":"INVALID_POINTER","message":"Pointer must be empty or begin with /."},"match":"equal"},
+  {"name":"invalid tilde escape","input":{"document":{"~2":1},"pointer":"/~2"},"expect":{"valid":false,"error":"INVALID_ESCAPE","message":"Only ~0 and ~1 are valid tilde escapes."},"match":"equal"},
+  {"name":"malformed fragment UTF8","input":{"document":{},"pointer":"#/%FF"},"expect":{"valid":false,"error":"INVALID_FRAGMENT","message":"URI fragment contains invalid percent encoding or UTF-8."},"match":"equal"}
+]

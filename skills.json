@@ -288,5 +288,15 @@
     "repo": "vercel/ms",
     "license": "MIT",
     "sourceCommit": "4ff48cec099f0514c3e9bbca18706c9c21122bfb"
+  },
+  {
+    "slug": "json-pointer",
+    "title": "JSON Pointer Lookup",
+    "version": 30,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "janl/node-jsonpointer",
+    "license": "MIT",
+    "sourceCommit": "edd90794ddf618e73c470fef5883480d92ff34f7"
   }
 ]
