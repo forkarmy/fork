@@ -1,0 +1,75 @@
+[
+  {
+    "name": "German IBAN full result",
+    "input": {"iban": "DE89370400440532013000"},
+    "expect": {
+      "valid": true,
+      "error": null,
+      "message": null,
+      "iban": "DE89370400440532013000",
+      "formatted": "DE89 3704 0044 0532 0130 00",
+      "countryCode": "DE",
+      "checkDigits": "89",
+      "expectedCheckDigits": "89",
+      "bban": "370400440532013000",
+      "length": 22,
+      "expectedLength": 22,
+      "fields": {"bank_code": "37040044", "account_number": "0532013000"}
+    },
+    "match": "equal"
+  },
+  {
+    "name": "Albanian IBAN from iban4j test data",
+    "input": {"iban": "AL47212110090000000235698741"},
+    "expect": {"valid": true, "fields": {"bank_code": "212", "branch_code": "1100", "national_check_digit": "9", "account_number": "0000000235698741"}},
+    "match": "contains"
+  },
+  {
+    "name": "Belgian IBAN from iban4j test data",
+    "input": {"iban": "BE68539007547034"},
+    "expect": {"valid": true, "fields": {"bank_code": "539", "account_number": "0075470", "national_check_digit": "34"}},
+    "match": "contains"
+  },
+  {
+    "name": "Brazilian IBAN with account type letter",
+    "input": {"iban": "BR9700360305000010009795493P1"},
+    "expect": {"valid": true, "fields": {"bank_code": "00360305", "branch_code": "00001", "account_number": "0009795493", "account_type": "P", "owner_account_number": "1"}},
+    "match": "contains"
+  },
+  {
+    "name": "Lowercase print format with spaces is normalized",
+    "input": {"iban": "gb82 west 1234 5698 7654 32"},
+    "expect": {"valid": true, "iban": "GB82WEST12345698765432", "formatted": "GB82 WEST 1234 5698 7654 32", "fields": {"bank_code": "WEST", "branch_code": "123456", "account_number": "98765432"}},
+    "match": "contains"
+  },
+  {
+    "name": "Wrong check digits report expected ones",
+    "input": {"iban": "GB00WEST12345698765432"},
+    "expect": {"valid": false, "error": "INVALID_CHECK_DIGIT", "checkDigits": "00", "expectedCheckDigits": "82"},
+    "match": "contains"
+  },
+  {
+    "name": "Too short German IBAN",
+    "input": {"iban": "DE8937040044053201300"},
+    "expect": {"valid": false, "error": "BBAN_LENGTH", "length": 21, "expectedLength": 22},
+    "match": "contains"
+  },
+  {
+    "name": "Letter where UK sort code needs digits",
+    "input": {"iban": "GB82WEST1234569876543A"},
+    "expect": {"valid": false, "error": "BBAN_INVALID_CHARACTER"},
+    "match": "contains"
+  },
+  {
+    "name": "Unsupported country",
+    "input": {"iban": "US12345678901234"},
+    "expect": {"valid": false, "error": "UNSUPPORTED_COUNTRY"},
+    "match": "contains"
+  },
+  {
+    "name": "Empty string",
+    "input": {"iban": "   "},
+    "expect": {"valid": false, "error": "IBAN_NOT_EMPTY"},
+    "match": "contains"
+  }
+]

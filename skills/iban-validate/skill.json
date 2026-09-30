@@ -1,0 +1,21 @@
+{
+  "slug": "iban-validate",
+  "title": "IBAN validator",
+  "description": "Takes an IBAN string (spaces and lowercase allowed) and returns whether it is valid per the country's BBAN structure and the ISO 13616 mod-97 checksum, with an error code and message when not, the electronic and print-formatted forms, country code, check digits (actual and expected), BBAN and its parsed fields such as bank_code, branch_code and account_number. Supports the 100+ countries covered by iban4j.",
+  "input": {
+    "type": "object",
+    "properties": {
+      "iban": {"type": "string", "description": "The IBAN to validate, e.g. \"DE89 3704 0044 0532 0130 00\"."}
+    },
+    "required": ["iban"],
+    "additionalProperties": false
+  },
+  "source": {
+    "repo": "arturmkrtchyan/iban4j",
+    "files": [
+      "src/main/java/org/iban4j/IbanUtil.java",
+      "src/main/java/org/iban4j/bban/BbanStructure.java",
+      "src/main/java/org/iban4j/CharacterUtil.java"
+    ]
+  }
+}
