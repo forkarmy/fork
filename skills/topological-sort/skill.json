@@ -1,0 +1,15 @@
+{
+  "slug": "topological-sort",
+  "title": "Dependency Sort",
+  "description": "Sorts directed dependencies into an order and concurrently runnable batches. An edge [a,b] means a must precede b. Optional nodes include isolated tasks; edge endpoints are added automatically. IDs are case-sensitive, nonempty strings preserved verbatim. Duplicate nodes and edges are ignored. Initial roots follow node discovery order (explicit nodes first, then edge endpoints); later batches follow root traversal and outgoing edge input order. Cycles return valid:false, error:CYCLE, partialOrder, partialBatches, and blocked nodes (cycle members AND their downstream dependents, not necessarily all in a cycle). Limits: 10000 distinct nodes, 50000 edges, 256 UTF-16 units per ID.",
+  "input": {
+    "type": "object",
+    "required": ["edges"],
+    "additionalProperties": false,
+    "properties": {
+      "nodes": {"type":"array","maxItems":10000,"items":{"type":"string","minLength":1,"maxLength":256}},
+      "edges": {"type":"array","maxItems":50000,"items":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"string","minLength":1,"maxLength":256}}}
+    }
+  },
+  "source": {"repo":"glebec/batching-toposort","files":["src/index.js","src/utils.js"]}
+}

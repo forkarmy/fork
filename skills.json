@@ -208,5 +208,15 @@
     "repo": "marlun78/number-to-words",
     "license": "MIT",
     "sourceCommit": "2b810ab7efffecb48941b1e07833d49604144569"
+  },
+  {
+    "slug": "topological-sort",
+    "title": "Dependency Sort",
+    "version": 22,
+    "agent": "gpt",
+    "model": "openai/gpt-6-astra",
+    "repo": "glebec/batching-toposort",
+    "license": "MIT",
+    "sourceCommit": "da6b72657d46f721cca4c572dc1353f50e78b8df"
   }
 ]

@@ -1,0 +1,14 @@
+[
+ {"name":"upstream empty graph","input":{"edges":[]},"expect":{"valid":true,"order":[],"batches":[],"nodeCount":0,"edgeCount":0},"match":"equal"},
+ {"name":"upstream simple DAG","input":{"edges":[["a","b"],["b","c"]]},"expect":{"valid":true,"order":["a","b","c"],"batches":[["a"],["b"],["c"]],"nodeCount":3,"edgeCount":2},"match":"equal"},
+ {"name":"upstream richer DAG","input":{"edges":[["a","c"],["b","c"]]},"expect":{"valid":true,"order":["a","b","c"],"batches":[["a","b"],["c"]],"nodeCount":3,"edgeCount":2},"match":"equal"},
+ {"name":"upstream complex DAG","input":{"edges":[["a","c"],["a","f"],["b","d"],["b","e"],["c","f"],["d","f"],["d","g"],["e","h"],["f","i"],["g","j"],["h","j"]]},"expect":{"valid":true,"order":["a","b","c","d","e","f","g","h","i","j"],"batches":[["a","b"],["c","d","e"],["f","g","h"],["i","j"]],"nodeCount":10,"edgeCount":11},"match":"equal"},
+ {"name":"upstream small cycle with isolated node","input":{"nodes":["a","b","c"],"edges":[["a","b"],["b","a"]]},"expect":{"valid":false,"error":"CYCLE","message":"Graph contains a directed cycle; blocked nodes include downstream dependents.","partialOrder":["c"],"partialBatches":[["c"]],"blocked":["a","b"],"nodeCount":3,"edgeCount":2},"match":"equal"},
+ {"name":"cycle also blocks downstream","input":{"edges":[["a","b"],["a","c"],["b","c"],["c","d"],["c","e"],["d","b"]]},"expect":{"valid":false,"error":"CYCLE","partialOrder":["a"],"partialBatches":[["a"]],"blocked":["b","c","d","e"]},"match":"contains"},
+ {"name":"self cycle","input":{"edges":[["x","x"]]},"expect":{"valid":false,"error":"CYCLE","blocked":["x"],"partialOrder":[]},"match":"contains"},
+ {"name":"deduplication and safe special IDs","input":{"nodes":["__proto__","constructor","__proto__","isolated"],"edges":[["__proto__","constructor"],["__proto__","constructor"]]},"expect":{"valid":true,"order":["__proto__","isolated","constructor"],"batches":[["__proto__","isolated"],["constructor"]],"nodeCount":3,"edgeCount":1},"match":"equal"},
+ {"name":"numeric-looking IDs retain discovery order","input":{"nodes":["10","2","1"],"edges":[]},"expect":{"valid":true,"order":["10","2","1"],"batches":[["10","2","1"]],"nodeCount":3,"edgeCount":0},"match":"equal"},
+ {"name":"later roots preserve edge traversal order","input":{"nodes":["a","b","c"],"edges":[["a","c"],["a","b"]]},"expect":{"valid":true,"order":["a","c","b"],"batches":[["a"],["c","b"]],"nodeCount":3,"edgeCount":2},"match":"equal"},
+ {"name":"malformed edge","input":{"edges":[["a",3]]},"expect":{"valid":false,"error":"INVALID_INPUT"},"match":"contains"},
+ {"name":"missing edges","input":{},"expect":{"valid":false,"error":"INVALID_INPUT"},"match":"contains"}
+]
