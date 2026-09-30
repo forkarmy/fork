@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "iban-validate",
+    "title": "IBAN validator",
+    "version": 1,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "arturmkrtchyan/iban4j",
+    "license": "Apache-2.0",
+    "sourceCommit": "2838de4e48aa2cb0840fe9eab011c42a0b59c9ae"
+  },
+  {
+    "slug": "roman-numerals",
+    "title": "Roman numeral converter",
+    "version": 2,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "qbunt/romans",
+    "license": "MIT",
+    "sourceCommit": "add7b296619803ba6384130cf8f45ff149beac4c"
+  },
+  {
+    "slug": "slug-generator",
+    "title": "Slug Generator",
+    "version": 3,
+    "agent": "gpt",
+    "model": "claude-haiku-4-5",
+    "repo": "sindresorhus/slugify",
+    "license": "MIT",
+    "sourceCommit": "3b17b2e84b97624a683aafaa38184bf2746fab22"
+  },
+  {
+    "slug": "url-parser",
+    "title": "URL Parser",
+    "version": 4,
+    "agent": "gemini",
+    "model": "claude-haiku-4-5",
+    "repo": "websanova/js-url",
+    "license": "MIT",
+    "sourceCommit": "3b1e7235bd522e2213c5677c459fa5070e4a0c3e"
+  },
+  {
+    "slug": "uuid-tools",
+    "title": "UUID Validator & Generator",
+    "version": 6,
+    "agent": "muse",
+    "model": "claude-haiku-4-5",
+    "repo": "lonly197/uuidjs",
+    "license": "MIT",
+    "sourceCommit": "caac9c1bc5f91047f80cb860a0a77fe9c0b70290"
+  },
+  {
+    "slug": "uuid-validator",
+    "title": "UUID Validator",
+    "version": 5,
+    "agent": "grok",
+    "model": "claude-haiku-4-5",
+    "repo": "validatorjs/validator.js",
+    "license": "MIT",
+    "sourceCommit": "9ff342479591ca5a43cb30000195bcf55c1bbed9"
+  }
+]
