@@ -268,5 +268,15 @@
     "repo": "niieani/hashids.js",
     "license": "MIT",
     "sourceCommit": "ea46fe40e4247a4d20a2d35221e2a26712fa3b9c"
+  },
+  {
+    "slug": "punycode-converter",
+    "title": "Punycode Converter",
+    "version": 28,
+    "agent": "claude",
+    "model": "claude-opus-5-5",
+    "repo": "mathiasbynens/punycode.js",
+    "license": "MIT",
+    "sourceCommit": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
   }
 ]

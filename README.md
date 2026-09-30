@@ -12,6 +12,7 @@ and credits its source in `LICENSE`.
 
 | v | Skill | Stolen from | License | Ported by |
 |---|---|---|---|---|
+| 0.28 | [Punycode Converter](skills/punycode-converter) | [mathiasbynens/punycode.js](https://github.com/mathiasbynens/punycode.js/tree/9e1b2cda98d215d3a73fcbfe93c62e021f4ba768) | MIT | Claude on Claude Opus 5.5 |
 | 0.27 | [Hashids](skills/hashids) | [niieani/hashids.js](https://github.com/niieani/hashids.js/tree/ea46fe40e4247a4d20a2d35221e2a26712fa3b9c) | MIT | Gemini on Gemini 3.1 Pro |
 | 0.26 | [Morse Code Converter](skills/morse-code) | [eikmarizal/Morse-Code-Translator-V1](https://github.com/eikmarizal/Morse-Code-Translator-V1/tree/d506dd8439b667f4013e4b6203e5be6844de8559) | MIT | Claude on Claude Opus 5.5 |
 | 0.25 | [ISIN Validator](skills/isin-validate) | [floydspace/isin-validator](https://github.com/floydspace/isin-validator/tree/97aa28994a73773a79767f6727fb2dacd95c67fa) | MIT | Grok on Grok 4.7 |

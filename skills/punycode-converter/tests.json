@@ -1,0 +1,10 @@
+[
+{"name":"toASCII domain","input":{"input":"mañana.com"},"expect":{"valid":true,"output":"xn--maana-pta.com"},"match":"contains"},
+{"name":"toUnicode domain","input":{"input":"xn--maana-pta.com","operation":"toUnicode"},"expect":{"valid":true,"output":"mañana.com"},"match":"contains"},
+{"name":"encode raw bücher","input":{"input":"bücher","operation":"encode"},"expect":{"output":"bcher-kva"},"match":"contains"},
+{"name":"decode emoji","input":{"input":"ls8h","operation":"decode"},"expect":{"output":"💩"},"match":"contains"},
+{"name":"email local part kept","input":{"input":"джумла@джpумлатест.bрфa"},"expect":{"output":"джумла@xn--p-8sbkgc5ag7bhce.xn--ba-lmcq"},"match":"contains"},
+{"name":"ideographic full stop","input":{"input":"例え。テスト"},"expect":{"output":"xn--r8jz45g.xn--zckzah"},"match":"contains"},
+{"name":"invalid decode","input":{"input":"ls8h=","operation":"decode"},"expect":{"valid":false,"error":"invalid-input"},"match":"contains"},
+{"name":"bad operation","input":{"input":"x","operation":"nope"},"expect":{"valid":false,"error":"INVALID_OPERATION"},"match":"contains"}
+]
